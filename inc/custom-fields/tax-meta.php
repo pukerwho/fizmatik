@@ -8,7 +8,7 @@ function crb_term_options() {
   Container::make( 'term_meta', 'Options' )
     ->where( 'term_taxonomy', '=', 'subject' )
     ->add_fields( array(
-    	Field::make( 'image', 'crb_subject_img', 'Заглавная картинка' )->set_value_type( 'url'),
+    	Field::make( 'file', 'crb_subject_img', 'Заглавная картинка' )->set_value_type( 'url'),
   ) );
 }
 
