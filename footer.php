@@ -9,7 +9,7 @@
 	                <img src="<?php bloginfo('template_url') ?>/img/logo.svg" alt="">
 	              </div>
 	              <div class="footer__city">
-	                Киев
+	                
 	              </div>
 	            </div>
 	            <div class="footer__right">
