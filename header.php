@@ -27,11 +27,13 @@
         <div class="col-md-12">
           <div class="header__content">
             <div class="header__left">
-              <div class="header__logo">
-                <img src="<?php bloginfo('template_url') ?>/img/logo.svg" alt="">
-              </div>
+              <a href="<?php echo home_url(); ?>">
+                <div class="header__logo">
+                  <img src="<?php bloginfo('template_url') ?>/img/logo.svg" alt="">
+                </div>
+              </a>
               <div class="header__city">
-                Киев
+                
               </div>
             </div>
             <div class="header__right">
