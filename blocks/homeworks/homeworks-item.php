@@ -5,7 +5,6 @@
 			foreach( $teachers as $teacher ): 
 		?>
 			<div class="homeworks__item-title">
-				<?php echo $teacher['id'] ?>
 				<?php echo get_the_title($teacher['id']) ?>
 			</div>
 		<?php endforeach; ?>	

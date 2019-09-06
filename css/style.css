@@ -9959,6 +9959,51 @@ button.swiper-pagination-bullet {
     font-family: 'Geometria-Medium';
     font-size: 18px;
     text-transform: lowercase; }
+  .header__menu .menu-item-has-children:hover .sub-menu {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+  .header__menu .menu-item-has-children:hover .sub-menu:hover {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+  .header__menu .sub-menu {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: none;
+    position: absolute;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    -webkit-transform: translate(-20%, 15%);
+    -ms-transform: translate(-20%, 15%);
+    transform: translate(-20%, 15%);
+    z-index: 1; }
+    .header__menu .sub-menu li {
+      min-width: 225px;
+      margin-right: 0;
+      border-bottom: 1px solid #eeeeee; }
+      .header__menu .sub-menu li:last-of-type {
+        border-bottom: none; }
+      .header__menu .sub-menu li:hover:after {
+        content: '';
+        display: none; }
+    .header__menu .sub-menu a {
+      display: inline-block;
+      text-transform: capitalize;
+      padding: 20px 30px 30px 30px; }
 
 .footer {
   margin-bottom: 35px; }
@@ -10330,7 +10375,9 @@ h2 {
         width: 100%;
         height: 100%;
         -webkit-border-radius: 50%;
-        border-radius: 50%; }
+        border-radius: 50%;
+        -o-object-fit: cover;
+        object-fit: cover; }
     .schedule__bottom-teacher__title {
       color: #23222d;
       font-family: 'Geometria-Medium';
