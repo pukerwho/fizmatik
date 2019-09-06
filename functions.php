@@ -219,6 +219,8 @@ function my_custom_upload_mimes($mimes = array()) {
     return $mimes;
 }
 
+add_action('upload_mimes', 'my_custom_upload_mimes');
+
 //Add Ajax
 add_action('wp_head', 'myplugin_ajaxurl');
 function myplugin_ajaxurl() {

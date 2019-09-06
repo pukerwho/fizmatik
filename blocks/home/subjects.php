@@ -11,7 +11,7 @@
 		<div class="row">
 			<div class="col-md-6">
 				<div class="home__subjects-item">
-					<a href="#">
+					<a href="/subject/math">
 						<div class="home__subjects-item__title">
 							Математике
 						</div>
@@ -29,7 +29,7 @@
 			</div>
 			<div class="col-md-6">
 				<div class="home__subjects-item">
-					<a href="#">
+					<a href="/subject/physics/">
 						<div class="home__subjects-item__title">
 							Физике
 						</div>
@@ -50,7 +50,7 @@
 			</div>
 			<div class="col-md-6">
 				<div class="home__subjects-item">
-					<a href="#">
+					<a href="/subject/chemistry/">
 						<div class="home__subjects-item__title">
 							Химии
 						</div>
@@ -68,7 +68,7 @@
 			</div>
 			<div class="col-md-6">
 				<div class="home__subjects-item">
-					<a href="#">
+					<a href="/subject/program/">
 						<div class="home__subjects-item__title">
 							Программировании
 						</div>
