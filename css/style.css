@@ -9987,9 +9987,6 @@ button.swiper-pagination-bullet {
     background-color: #ffffff;
     -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    -webkit-transform: translate(-20%, 15%);
-    -ms-transform: translate(-20%, 15%);
-    transform: translate(-20%, 15%);
     z-index: 1; }
     .header__menu .sub-menu li {
       min-width: 225px;
