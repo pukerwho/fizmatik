@@ -8,16 +8,28 @@ Template Name: ГЛАВНАЯ страница
 
 <?php get_template_part('blocks/home/hero') ?>
 <?php get_template_part('blocks/home/subjects') ?>
+<div class="balls">
+	<div class="balls__home-yellowone">
+		<img src="<?php bloginfo('template_url') ?>/img/yellow.png" alt="">
+	</div>
+	<div class="balls__home-greenone"></div>
+</div>
 <!-- EVENTS -->
 <div class="events__page">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
 				<h1 class="events__page-title">И мы умеем не только учиться, <br> но и веселиться</h1>
+				<div class="balls">
+					<div class="balls__home-blue"></div>
+				</div>
 			</div>
 		</div>
 		<div class="row mb-5">
 			<div class="col-md-12">
+				<div class="balls">
+					<div class="balls__home-red"></div>
+				</div>
 				<div class="events__page-grid">
 					<?php 
 						$custom_query_events = new WP_Query( array( 
@@ -39,6 +51,9 @@ Template Name: ГЛАВНАЯ страница
 						</div>
 					</div>
 				</a>
+				<div class="balls">
+					<div class="balls__home-greentwo"></div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -48,6 +63,11 @@ Template Name: ГЛАВНАЯ страница
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
+				<div class="balls">
+					<div class="balls__home-yellowtwo">
+						<img src="<?php bloginfo('template_url') ?>/img/yellow.png" alt="">
+					</div>
+				</div>
 				<div class="contact__title">Контакты</div>
 			</div>
 		</div>

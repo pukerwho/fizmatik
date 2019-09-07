@@ -54,5 +54,4 @@ if ($('.subjects').length > 0){
   $('.balls__subjects-bluetwo').css({'top':'calc('+ teachersHeight +'px / 1.13)'});
   $('.balls__subjects-red').css({'top':'calc('+ teachersHeight +'px / 1.07)'});
   $('.balls__subjects-yellow').css({'top':'calc('+ teachersHeight +'px / 1.3)'});
-
 }
