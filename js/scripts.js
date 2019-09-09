@@ -14,9 +14,9 @@ $(window).scroll(function(){
   }
 });
 
-$('.menu-item-has-children').on('click', function(e){
+$('.menu-item-has-children > a').on('click', function(e){
   e.preventDefault();
-})
+});
 
 if ($(document).width() > 640) {
   $('#lightSlider').lightSlider({

@@ -9933,16 +9933,63 @@ button.swiper-pagination-bullet {
     -ms-flex-align: center;
     align-items: center; }
     .header__left a {
-      padding-bottom: 20px; }
+      padding-bottom: 30px; }
   .header__logo {
     margin-right: 40px; }
     .header__logo img {
       width: 128px; }
-  .header__city {
-    color: #4c4c4c;
+  .header__city a {
+    display: inline-block;
+    color: #777777;
     font-family: 'Geometria-Medium';
     font-size: 18px;
-    letter-spacing: -0.3px; }
+    padding-bottom: 20px; }
+  .header__city-main {
+    position: relative; }
+    .header__city-main > a {
+      position: relative;
+      padding-right: 15px; }
+      .header__city-main > a:before {
+        content: '';
+        width: 7px;
+        height: 5.02px;
+        position: absolute;
+        top: -webkit-calc(50% - 11.5px);
+        top: calc(50% - 11.5px);
+        right: 0;
+        background: url("../img/arrow-down.svg");
+        -webkit-background-size: cover;
+        background-size: cover; }
+    .header__city-main:hover .header__city-sub {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex; }
+  .header__city-sub {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: none;
+    position: absolute;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    -webkit-transform: translateY(-30%);
+    -ms-transform: translateY(-30%);
+    transform: translateY(-30%);
+    z-index: 1;
+    padding: 10px 20px; }
+    .header__city-sub a {
+      padding-bottom: 0; }
   .header__menu ul {
     display: -webkit-box;
     display: -webkit-flex;
@@ -10161,7 +10208,7 @@ h2 {
 
 .menu-item-has-children {
   position: relative;
-  padding-right: 50px; }
+  padding-right: 25px; }
   .menu-item-has-children:before {
     content: '';
     width: 7px;

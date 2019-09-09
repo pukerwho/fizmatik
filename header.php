@@ -20,7 +20,6 @@
 </head>
 <body <?php echo body_class(); ?>>
   <!-- <div class="preloader"></div> -->
-  
   <header id="header" class="header" role="banner">
     <div class="container">
       <div class="row">
@@ -33,7 +32,30 @@
                 </div>
               </a>
               <div class="header__city">
+                <?php if ($_SESSION['cityvar'] === 'kyiv'): ?>
+                <div class="header__city-main">
+                  <a href="<?php echo get_page_url('tpl_kyiv') ?>">
+                    Киев
+                  </a>  
+                  <div class="header__city-sub">
+                    <a href="<?php echo get_page_url('tpl_kharkiv') ?>">
+                      Харьков
+                    </a>  
+                  </div>
+                </div>
                 
+                <?php else: ?>
+                  <div class="header__city-main">
+                    <a href="<?php echo get_page_url('tpl_kharkiv') ?>">
+                      Харьков
+                    </a>
+                    <div class="header__city-sub">
+                      <a href="<?php echo get_page_url('tpl_kyiv') ?>">
+                        Киев
+                      </a>
+                    </div>
+                  </div>
+                <?php endif; ?>
               </div>
             </div>
             <div class="header__right">

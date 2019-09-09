@@ -24,6 +24,10 @@ if( !isset( $content_width ) ) {
     $content_width = 960;
 }
 
+if (!session_id()) {
+  session_start();
+}
+
 require_once get_template_directory() . '/inc/carbon-fields/carbon-fields-plugin.php';
 require_once get_template_directory() . '/inc/custom-fields/settings-meta.php';
 require_once get_template_directory() . '/inc/custom-fields/post-meta.php';
@@ -227,6 +231,28 @@ function myplugin_ajaxurl() {
   echo '<script type="text/javascript">
     var ajaxurl = "' . admin_url('admin-ajax.php') . '";
   </script>';
+}
+
+function get_page_url($template_name) {
+  $pages = get_posts([
+    'post_type' => 'page',
+    'post_status' => 'publish',
+    'meta_query' => [
+      [
+        'key' => '_wp_page_template',
+        'value' => $template_name.'.php',
+        'compare' => '='
+      ]
+    ]
+  ]);
+  if(!empty($pages))
+  {
+    foreach($pages as $pages__value)
+    {
+      return get_permalink($pages__value->ID);
+    }
+  }
+  return get_bloginfo('url');
 }
 
 function my_login_logo() { ?>
