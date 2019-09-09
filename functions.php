@@ -228,3 +228,17 @@ function myplugin_ajaxurl() {
     var ajaxurl = "' . admin_url('admin-ajax.php') . '";
   </script>';
 }
+
+function my_login_logo() { ?>
+  <style type="text/css">
+    #login h1 a, .login h1 a {
+      background-image: url(<?php bloginfo('template_url') ?>/img/logo.svg);
+      width: 100%;
+      height: 54px;
+      background-size: contain;
+      padding: 20px 0px;
+      background-position: center;
+    }
+  </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
