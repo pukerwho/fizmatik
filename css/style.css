@@ -10206,6 +10206,9 @@ h2 {
     position: absolute;
     bottom: 0; }
 
+.sub-menu .current-menu-item:after {
+  content: none; }
+
 .menu-item-has-children {
   position: relative;
   padding-right: 25px; }
@@ -11419,6 +11422,9 @@ h2 {
       -webkit-transform: translateY(10%);
       -ms-transform: translateY(10%);
       transform: translateY(10%); }
+
+  .current-menu-item:after {
+    content: ''; }
 
   #head_menu li:hover:after {
     content: none; }
