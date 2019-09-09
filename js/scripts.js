@@ -68,6 +68,12 @@ if ($('.page-template-tpl_main').length > 0){
   $('#balls__home-red').css({'top':'calc('+ homeHeight +'px / 3.25)'});
 }
 
+if ($('.events__page-grid').length > 0) {
+  var eventsFourItemHeight = $('.events__page-item:nth-of-type(4n)').height();
+  console.log(eventsFourItemHeight);
+  $('.events__page-item:nth-of-type(5n) .events__blocks-img').css({'height': 'calc('+ eventsFourItemHeight +'px + 242px)'}); 
+}
+
 //Parallax
 var balls_home_yellowone = document.querySelector('#balls__home-yellowone');
 var parallaxHomeYellowOne = new Parallax(balls_home_yellowone);
