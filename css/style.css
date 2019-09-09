@@ -10207,7 +10207,7 @@ h2 {
     bottom: 0; }
 
 .sub-menu .current-menu-item:after {
-  content: none; }
+  display: none; }
 
 .menu-item-has-children {
   position: relative;
