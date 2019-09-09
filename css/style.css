@@ -11400,6 +11400,9 @@ h2 {
   .mobile-show {
     display: block !important; }
 
+  h2 {
+    font-size: 32px; }
+
   .header__left a {
     padding-bottom: 0; }
   .header__menu {
@@ -11407,6 +11410,15 @@ h2 {
   .header__logo {
     position: relative;
     z-index: 99; }
+  .header__city {
+    padding-top: 2px; }
+    .header__city-main > a:before {
+      top: -webkit-calc(50% - 2.5px);
+      top: calc(50% - 2.5px); }
+    .header__city-sub {
+      -webkit-transform: translateY(10%);
+      -ms-transform: translateY(10%);
+      transform: translateY(10%); }
 
   #head_menu li:hover:after {
     content: none; }
@@ -11611,6 +11623,18 @@ h2 {
     right: auto;
     left: 0; }
 
+  .teachers {
+    padding-bottom: 50px; }
+    .teachers__block {
+      margin-bottom: 50px; }
+      .teachers__block-img {
+        height: 250px; }
+      .teachers__block-title {
+        font-size: 20px; }
+
+  .post-type-archive-events .events__page {
+    padding-top: 75px; }
+
   .events__page-grid {
     display: -webkit-box;
     display: -webkit-flex;
@@ -11644,8 +11668,25 @@ h2 {
   .footer__logo {
     margin-right: 0; }
 
+  .fizmat__form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+  .fizmat__item {
+    margin-right: 0;
+    margin-bottom: 20px; }
+    .fizmat__item:last-of-type {
+      margin-bottom: 0; }
+
   .balls__home-yellowone {
     left: -90px;
+    z-index: -1; }
+  .balls__one-bigblue {
+    left: -15%;
+    z-index: -1; }
+  .balls__teachers-bigblue {
     z-index: -1; }
   .balls__contact-red {
     right: 0; }

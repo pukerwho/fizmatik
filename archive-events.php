@@ -5,7 +5,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<h1 class="events__page-title">И мы умеем не только учиться, <br> но и веселиться</h1>
+				<h1 class="events__page-title fizmatik-animate">И мы умеем не только учиться, <br> но и веселиться</h1>
 			</div>
 		</div>
 		<div class="row mb-5">
