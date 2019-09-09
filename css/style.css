@@ -10059,6 +10059,9 @@ button.swiper-pagination-bullet {
 
 .footer {
   margin-bottom: 35px; }
+  .footer .menu-item-has-children:before {
+    top: -webkit-calc(50% - 1.5px);
+    top: calc(50% - 1.5px); }
   .footer__content {
     display: -webkit-box;
     display: -webkit-flex;
