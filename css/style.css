@@ -8980,9 +8980,9 @@ a.text-dark:hover, a.text-dark:focus {
 @font-face {
   font-family: 'AvenirNext-Medium';
   src: local("AvenirNext-Medium");
-  src: url("../fonts/AvenirNext-Medium.eot");
+  src: url("../fonts/AvenirNextCyr-Medium.eot");
   /* IE9 Compat Modes */
-  src: url("../fonts/AvenirNext-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/AvenirNext-Medium.woff") format("woff"), url("../fonts/AvenirNext-Medium.woff2") format("woff2"), url("../fonts/AvenirNext-Medium.ttf") format("truetype");
+  src: url("../fonts/AvenirNextCyr-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/AvenirNextCyr-Medium.woff") format("woff"), url("../fonts/AvenirNextCyr-Medium.woff2") format("woff2"), url("../fonts/AvenirNextCyr-Medium.ttf") format("truetype");
   font-style: normal;
   font-weight: normal; }
 .swiper-container {
@@ -9909,7 +9909,7 @@ button.swiper-pagination-bullet {
 
 .header {
   margin-top: 32px;
-  margin-bottom: 32px; }
+  margin-bottom: 12px; }
   .header__content {
     display: -webkit-box;
     display: -webkit-flex;
@@ -9932,6 +9932,8 @@ button.swiper-pagination-bullet {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center; }
+    .header__left a {
+      padding-bottom: 20px; }
   .header__logo {
     margin-right: 40px; }
     .header__logo img {
@@ -10141,6 +10143,9 @@ h2 {
 .p-relative {
   position: relative; }
 
+.p-absolute {
+  position: absolute; }
+
 .pointer {
   cursor: pointer; }
 
@@ -10195,10 +10200,28 @@ h2 {
     margin-bottom: 50px; }
     .home__hero-man {
       position: absolute;
-      right: 0; }
+      right: 0;
+      opacity: 0;
+      -webkit-transform: translateX(2%);
+      -ms-transform: translateX(2%);
+      transform: translateX(2%); }
+      .home__hero-man.fizmatik-show {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+        transform: translateX(0);
+        -webkit-transition: all 0.75s 0.5s;
+        -o-transition: all 0.75s 0.5s;
+        transition: all 0.75s 0.5s; }
     .home__hero-women {
       position: absolute;
-      left: 0; }
+      left: 0;
+      opacity: 0; }
+      .home__hero-women.fizmatik-show {
+        opacity: 1;
+        -webkit-transition: all 0.75s 0.5s;
+        -o-transition: all 0.75s 0.5s;
+        transition: all 0.75s 0.5s; }
     .home__hero-center {
       position: relative;
       display: -webkit-box;
@@ -10219,12 +10242,36 @@ h2 {
       -ms-flex-pack: center;
       justify-content: center; }
     .home__hero-logo {
-      margin-bottom: 25px; }
+      margin-bottom: 25px;
+      opacity: 0;
+      -webkit-transform: scale(0.8) rotate(540deg);
+      -ms-transform: scale(0.8) rotate(540deg);
+      transform: scale(0.8) rotate(540deg); }
+      .home__hero-logo.fizmatik-show {
+        opacity: 1;
+        -webkit-transform: scale(1) rotate(0);
+        -ms-transform: scale(1) rotate(0);
+        transform: scale(1) rotate(0);
+        -webkit-transition: all 1s 0.75s;
+        -o-transition: all 1s 0.75s;
+        transition: all 1s 0.75s; }
     .home__hero-text {
       color: #2D303C;
       font-family: 'Geometria-Regular';
       font-size: 20px;
-      text-align: center; }
+      text-align: center;
+      opacity: 0;
+      -webkit-transform: translateY(15%);
+      -ms-transform: translateY(15%);
+      transform: translateY(15%); }
+      .home__hero-text.fizmatik-show {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+        -webkit-transition: all 0.75s 1.5s;
+        -o-transition: all 0.75s 1.5s;
+        transition: all 0.75s 1.5s; }
   .home__subjects {
     position: relative; }
     .home__subjects-bg {
@@ -10236,19 +10283,58 @@ h2 {
       font-family: 'Geometria-Medium';
       font-size: 50px;
       line-height: 70px;
+      opacity: 0;
+      -webkit-transform: translateY(20%);
+      -ms-transform: translateY(20%);
+      transform: translateY(20%);
       margin-bottom: 80px; }
+      .home__subjects-title.fizmatik-show {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+        -webkit-transition: all 0.75s 0.75s;
+        -o-transition: all 0.75s 0.75s;
+        transition: all 0.75s 0.75s; }
     .home__subjects-item {
       position: relative;
       background-color: #F0EFF0;
       padding: 0 30px;
-      margin-bottom: 80px; }
+      margin-bottom: 80px;
+      opacity: 0;
+      -webkit-transform: scaleY(0);
+      -ms-transform: scaleY(0);
+      transform: scaleY(0); }
+      .home__subjects-item.fizmatik-show {
+        opacity: 1;
+        -webkit-transform: scaleY(1);
+        -ms-transform: scaleY(1);
+        transform: scaleY(1);
+        -webkit-transition: all 0.75s;
+        -o-transition: all 0.75s;
+        transition: all 0.75s; }
       .home__subjects-item__title {
         display: inline-block;
         position: relative;
         color: #2D303C;
         font-family: 'Geometria-Medium';
         font-size: 40px;
-        top: -25px; }
+        top: -25px;
+        opacity: 0;
+        -webkit-transform: translate(0, 20%) rotate(4deg);
+        -ms-transform: translate(0, 20%) rotate(4deg);
+        transform: translate(0, 20%) rotate(4deg);
+        -webkit-transition: all 0.75s 0.7s;
+        -o-transition: all 0.75s 0.7s;
+        transition: all 0.75s 0.7s; }
+        .home__subjects-item__title.fizmatik-show {
+          opacity: 1;
+          -webkit-transform: translate(0, 0%) rotate(0deg);
+          -ms-transform: translate(0, 0%) rotate(0deg);
+          transform: translate(0, 0%) rotate(0deg);
+          -webkit-transition: all 0.75s 0.7s;
+          -o-transition: all 0.75s 0.7s;
+          transition: all 0.75s 0.7s; }
         .home__subjects-item__title:after {
           content: '';
           width: 0;
@@ -10265,77 +10351,179 @@ h2 {
         font-family: 'Geometria-Regular';
         font-size: 18px;
         top: -25px;
-        padding-bottom: 40px; }
+        padding-bottom: 40px;
+        opacity: 0;
+        -webkit-transform: translateY(15%);
+        -ms-transform: translateY(15%);
+        transform: translateY(15%); }
+        .home__subjects-item__description.fizmatik-show {
+          opacity: 1;
+          -webkit-transform: translateY(0);
+          -ms-transform: translateY(0);
+          transform: translateY(0);
+          -webkit-transition: all 0.75s 0.7s;
+          -o-transition: all 0.75s 0.7s;
+          transition: all 0.75s 0.7s; }
   .home .math-top {
     position: absolute;
     top: 0;
     right: 0;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); }
+    opacity: 0;
+    -webkit-transform: translate(-50%, -50%) rotate(3deg);
+    -ms-transform: translate(-50%, -50%) rotate(3deg);
+    transform: translate(-50%, -50%) rotate(3deg); }
+    .home .math-top.fizmatik-show {
+      opacity: 1;
+      -webkit-transform: translate(-50%, -50%) rotate(0);
+      -ms-transform: translate(-50%, -50%) rotate(0);
+      transform: translate(-50%, -50%) rotate(0);
+      -webkit-transition: all 0.75s 0.8s;
+      -o-transition: all 0.75s 0.8s;
+      transition: all 0.75s 0.8s; }
   .home .math-bottom {
     position: absolute;
     bottom: 0;
     right: 0;
-    -webkit-transform: translate(10%, 10%);
-    -ms-transform: translate(10%, 10%);
-    transform: translate(10%, 10%); }
+    opacity: 0;
+    -webkit-transform: translate(10%, -10%) rotate(-3deg);
+    -ms-transform: translate(10%, -10%) rotate(-3deg);
+    transform: translate(10%, -10%) rotate(-3deg); }
+    .home .math-bottom.fizmatik-show {
+      opacity: 1;
+      -webkit-transform: translate(10%, 10%) rotate(0);
+      -ms-transform: translate(10%, 10%) rotate(0);
+      transform: translate(10%, 10%) rotate(0);
+      -webkit-transition: all 0.75s 0.7s;
+      -o-transition: all 0.75s 0.7s;
+      transition: all 0.75s 0.7s; }
   .home .fizik-top {
     position: absolute;
     top: 0;
     right: 0;
-    -webkit-transform: translate(50%, -50%);
-    -ms-transform: translate(50%, -50%);
-    transform: translate(50%, -50%); }
+    opacity: 0;
+    -webkit-transform: translate(50%, -70%);
+    -ms-transform: translate(50%, -70%);
+    transform: translate(50%, -70%); }
+    .home .fizik-top.fizmatik-show {
+      opacity: 1;
+      -webkit-transform: translate(50%, -50%);
+      -ms-transform: translate(50%, -50%);
+      transform: translate(50%, -50%);
+      -webkit-transition: all 0.75s 0.75s;
+      -o-transition: all 0.75s 0.75s;
+      transition: all 0.75s 0.75s; }
   .home .fizik-top-two {
     position: absolute;
     top: 0;
     right: 0;
-    -webkit-transform: translate(25%, -10%);
-    -ms-transform: translate(25%, -10%);
-    transform: translate(25%, -10%); }
+    opacity: 0;
+    -webkit-transform: translate(20%, -10%);
+    -ms-transform: translate(20%, -10%);
+    transform: translate(20%, -10%); }
+    .home .fizik-top-two.fizmatik-show {
+      opacity: 1;
+      -webkit-transform: translate(25%, -10%);
+      -ms-transform: translate(25%, -10%);
+      transform: translate(25%, -10%);
+      -webkit-transition: all 0.75s 0.75s;
+      -o-transition: all 0.75s 0.75s;
+      transition: all 0.75s 0.75s; }
   .home .fizik-bottom {
     position: absolute;
     right: 0;
     bottom: 0;
-    -webkit-transform: translate(-175%, 15%);
-    -ms-transform: translate(-175%, 15%);
-    transform: translate(-175%, 15%); }
+    opacity: 0;
+    -webkit-transform: translate(-175%, 15%) scale(1.1);
+    -ms-transform: translate(-175%, 15%) scale(1.1);
+    transform: translate(-175%, 15%) scale(1.1); }
+    .home .fizik-bottom.fizmatik-show {
+      opacity: 1;
+      -webkit-transform: translate(-175%, 15%) scale(1);
+      -ms-transform: translate(-175%, 15%) scale(1);
+      transform: translate(-175%, 15%) scale(1);
+      -webkit-transition: all 0.75s 0.75s;
+      -o-transition: all 0.75s 0.75s;
+      transition: all 0.75s 0.75s; }
   .home .khimia-top {
     position: absolute;
     top: 0;
     right: 0;
-    -webkit-transform: translate(-120%, -50%);
-    -ms-transform: translate(-120%, -50%);
-    transform: translate(-120%, -50%); }
+    opacity: 0;
+    -webkit-transform: translate(-150%, -50%);
+    -ms-transform: translate(-150%, -50%);
+    transform: translate(-150%, -50%); }
+    .home .khimia-top.fizmatik-show {
+      opacity: 1;
+      -webkit-transform: translate(-120%, -50%);
+      -ms-transform: translate(-120%, -50%);
+      transform: translate(-120%, -50%);
+      -webkit-transition: all 0.75s 0.75s;
+      -o-transition: all 0.75s 0.75s;
+      transition: all 0.75s 0.75s; }
   .home .khimia-bottom {
     position: absolute;
     right: 0;
     bottom: 0;
-    -webkit-transform: translate(-10%, 10%);
-    -ms-transform: translate(-10%, 10%);
-    transform: translate(-10%, 10%); }
+    opacity: 0;
+    -webkit-transform: translate(-10%, 25%) rotate(3deg);
+    -ms-transform: translate(-10%, 25%) rotate(3deg);
+    transform: translate(-10%, 25%) rotate(3deg); }
+    .home .khimia-bottom.fizmatik-show {
+      opacity: 1;
+      -webkit-transform: translate(-10%, 10%) rotate(0);
+      -ms-transform: translate(-10%, 10%) rotate(0);
+      transform: translate(-10%, 10%) rotate(0);
+      -webkit-transition: all 0.75s 0.75s;
+      -o-transition: all 0.75s 0.75s;
+      transition: all 0.75s 0.75s; }
   .home .program-top {
     position: absolute;
     right: 0;
     top: 0;
-    -webkit-transform: translate(50%, -30%);
-    -ms-transform: translate(50%, -30%);
-    transform: translate(50%, -30%); }
+    opacity: 0;
+    -webkit-transform: translate(80%, -30%);
+    -ms-transform: translate(80%, -30%);
+    transform: translate(80%, -30%); }
+    .home .program-top.fizmatik-show {
+      opacity: 1;
+      -webkit-transform: translate(50%, -30%);
+      -ms-transform: translate(50%, -30%);
+      transform: translate(50%, -30%);
+      -webkit-transition: all 0.75s 0.75s;
+      -o-transition: all 0.75s 0.75s;
+      transition: all 0.75s 0.75s; }
   .home .program-bottom {
     position: absolute;
     right: 0;
     bottom: 0;
-    -webkit-transform: translate(20%, 0);
-    -ms-transform: translate(20%, 0);
-    transform: translate(20%, 0); }
+    opacity: 0;
+    -webkit-transform: translate(30%, 20%) rotate(5deg);
+    -ms-transform: translate(30%, 20%) rotate(5deg);
+    transform: translate(30%, 20%) rotate(5deg); }
+    .home .program-bottom.fizmatik-show {
+      opacity: 1;
+      -webkit-transform: translate(20%, 0) rotate(0);
+      -ms-transform: translate(20%, 0) rotate(0);
+      transform: translate(20%, 0) rotate(0);
+      -webkit-transition: all 0.75s 0.75s;
+      -o-transition: all 0.75s 0.75s;
+      transition: all 0.75s 0.75s; }
   .home .program-bottom-two {
     position: absolute;
     right: 0;
     bottom: 0;
-    -webkit-transform: translate(-220%, -125%);
-    -ms-transform: translate(-220%, -125%);
-    transform: translate(-220%, -125%); }
+    opacity: 0;
+    -webkit-transform: translate(-220%, -125%) scale(1.2);
+    -ms-transform: translate(-220%, -125%) scale(1.2);
+    transform: translate(-220%, -125%) scale(1.2); }
+    .home .program-bottom-two.fizmatik-show {
+      opacity: 1;
+      -webkit-transform: translate(-220%, -125%) scale(1);
+      -ms-transform: translate(-220%, -125%) scale(1);
+      transform: translate(-220%, -125%) scale(1);
+      -webkit-transition: all 0.75s 0.75s;
+      -o-transition: all 0.75s 0.75s;
+      transition: all 0.75s 0.75s; }
 
 .hero__subject {
   position: relative;
@@ -10485,7 +10673,19 @@ h2 {
     font-family: 'Geometria-Bold';
     font-size: 50px;
     line-height: 1.4;
+    opacity: 0;
+    -webkit-transform: translateY(20%);
+    -ms-transform: translateY(20%);
+    transform: translateY(20%);
     margin-bottom: 60px; }
+    .events__page-title.fizmatik-show {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+      transform: translateY(0);
+      -webkit-transition: all 0.75s 0.75s;
+      -o-transition: all 0.75s 0.75s;
+      transition: all 0.75s 0.75s; }
   .events__page-grid {
     width: 100%;
     display: -ms-grid;
@@ -10501,7 +10701,38 @@ h2 {
     -ms-grid-column-span: 1;
     grid-column: span 1;
     -ms-grid-row-span: 1;
-    grid-row: span 1; }
+    grid-row: span 1;
+    opacity: 0; }
+    .events__page-item:nth-of-type(1).fizmatik-show {
+      opacity: 1;
+      -webkit-transition: all 0.75s 0.5s;
+      -o-transition: all 0.75s 0.5s;
+      transition: all 0.75s 0.5s; }
+    .events__page-item:nth-of-type(2).fizmatik-show {
+      opacity: 1;
+      -webkit-transition: all 0.75s 0.8s;
+      -o-transition: all 0.75s 0.8s;
+      transition: all 0.75s 0.8s; }
+    .events__page-item:nth-of-type(3).fizmatik-show {
+      opacity: 1;
+      -webkit-transition: all 0.75s 1.2s;
+      -o-transition: all 0.75s 1.2s;
+      transition: all 0.75s 1.2s; }
+    .events__page-item:nth-of-type(4).fizmatik-show {
+      opacity: 1;
+      -webkit-transition: all 0.75s 0.5s;
+      -o-transition: all 0.75s 0.5s;
+      transition: all 0.75s 0.5s; }
+    .events__page-item:nth-of-type(5).fizmatik-show {
+      opacity: 1;
+      -webkit-transition: all 0.75s 0.8s;
+      -o-transition: all 0.75s 0.8s;
+      transition: all 0.75s 0.8s; }
+    .events__page-item:nth-of-type(6).fizmatik-show {
+      opacity: 1;
+      -webkit-transition: all 0.75s 1.2s;
+      -o-transition: all 0.75s 1.2s;
+      transition: all 0.75s 1.2s; }
     .events__page-item:nth-of-type(5n) {
       -ms-grid-column-span: 2;
       grid-column: span 2;
@@ -10526,6 +10757,9 @@ h2 {
     cursor: pointer;
     padding: 15px 30px; }
 .events__more {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   color: #ffffff;
   font-family: 'Geometria-Medium';
@@ -10715,7 +10949,13 @@ h2 {
       width: 100%;
       height: 340px;
       overflow: hidden;
+      opacity: 0;
       margin-bottom: 30px; }
+      .contact__block-map.fizmatik-show {
+        opacity: 1;
+        -webkit-transition: all 0.75s 0.5s;
+        -o-transition: all 0.75s 0.5s;
+        transition: all 0.75s 0.5s; }
       .contact__block-map iframe {
         width: 100%;
         height: 680px;
@@ -10727,14 +10967,26 @@ h2 {
       color: #2d303c;
       font-family: 'Geometria-Bold';
       font-size: 22px;
+      opacity: 0;
       margin-bottom: 10px; }
+      .contact__block-title.fizmatik-show {
+        opacity: 1;
+        -webkit-transition: all 0.75s 0.75s;
+        -o-transition: all 0.75s 0.75s;
+        transition: all 0.75s 0.75s; }
     .contact__block-address {
       width: 60%;
       color: #2d303c;
       font-family: 'Geometria-Regular';
       font-size: 16px;
       line-height: 1.63;
+      opacity: 0;
       margin: auto; }
+      .contact__block-address.fizmatik-show {
+        opacity: 1;
+        -webkit-transition: all 0.75s 1s;
+        -o-transition: all 0.75s 1s;
+        transition: all 0.75s 1s; }
 
 .fizmat__form {
   display: -webkit-box;
@@ -10799,18 +11051,24 @@ h2 {
   .select::-ms-expand {
     display: none; }
 
+#balls__home-greenone {
+  left: 5%; }
+
+#balls__home-blue {
+  right: 1%; }
+
+#balls__home-greentwo {
+  right: 20%; }
+
+#balls__home-red {
+  right: 5%; }
+
 .balls__home-yellowone {
   position: absolute;
-  left: 0;
-  -webkit-transform: translate(-15%, -120%);
-  -ms-transform: translate(-15%, -120%);
-  transform: translate(-15%, -120%); }
+  left: -30px; }
 .balls__home-yellowtwo {
   position: absolute;
-  left: 0;
-  -webkit-transform: translate(-50%, -25%);
-  -ms-transform: translate(-50%, -25%);
-  transform: translate(-50%, -25%); }
+  left: -60px; }
 .balls__home-greenone {
   width: 39px;
   height: 39px;
@@ -10834,10 +11092,7 @@ h2 {
   right: 0;
   background-color: #9C5FDC;
   -webkit-border-radius: 50%;
-  border-radius: 50%;
-  -webkit-transform: translate(90%, -120%);
-  -ms-transform: translate(90%, -120%);
-  transform: translate(90%, -120%); }
+  border-radius: 50%; }
 .balls__home-red {
   width: 39px;
   height: 39px;
@@ -11075,5 +11330,259 @@ h2 {
   background-color: #fddd5d;
   -webkit-border-radius: 50%;
   border-radius: 50%; }
+
+@media (max-width: 992px) {
+  .pc-show {
+    display: none !important; }
+
+  .mobile-show {
+    display: block !important; }
+
+  .header__left a {
+    padding-bottom: 0; }
+  .header__menu {
+    display: none; }
+  .header__logo {
+    position: relative;
+    z-index: 99; }
+
+  #head_menu li:hover:after {
+    content: none; }
+
+  .mobile-menu {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 3;
+    -webkit-transition: all 0.35s;
+    -o-transition: all 0.35s;
+    transition: all 0.35s; }
+    .mobile-menu span {
+      width: 40px;
+      height: 2px;
+      display: inline-block;
+      background-color: #000000;
+      -webkit-transition: all 0.4s;
+      -o-transition: all 0.4s;
+      transition: all 0.4s;
+      z-index: 2; }
+      .mobile-menu span:nth-of-type(2) {
+        margin-top: 0.5rem; }
+      .mobile-menu span:nth-of-type(3) {
+        margin-top: 0.5rem; }
+    .mobile-menu__active {
+      -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+      transform: rotate(-90deg);
+      z-index: 10; }
+
+  .mobile-cover {
+    width: 80%;
+    min-height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: -120px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    font-size: 2rem;
+    background: #ffffff;
+    -webkit-box-shadow: 1px 0px 5px 1px rgba(0, 0, 0, 0.25);
+    box-shadow: 1px 0px 5px 1px rgba(0, 0, 0, 0.25);
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%);
+    opacity: 0;
+    -webkit-transition: all 0.6s;
+    -o-transition: all 0.6s;
+    transition: all 0.6s;
+    z-index: -1;
+    overflow-y: scroll;
+    padding: 15px;
+    padding-top: 100px; }
+    .mobile-cover:after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      z-index: -1; }
+    .mobile-cover a {
+      position: relative;
+      color: #23222d;
+      font-family: 'Geometria-Regular';
+      font-size: 16px;
+      font-weight: 800;
+      text-transform: uppercase; }
+    .mobile-cover li:last-child {
+      margin-bottom: 0; }
+    .mobile-cover__open {
+      -webkit-transform: translateY(0%);
+      -ms-transform: translateY(0%);
+      transform: translateY(0%);
+      opacity: 1;
+      -webkit-transition: all 0.4s;
+      -o-transition: all 0.4s;
+      transition: all 0.4s;
+      z-index: 9; }
+    .mobile-cover .menu {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column; }
+      .mobile-cover .menu li {
+        margin-right: 0; }
+      .mobile-cover .menu .menu-item-has-children:hover .sub-menu {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column; }
+      .mobile-cover .menu .sub-menu {
+        display: none;
+        position: relative;
+        -webkit-border-radius: none;
+        border-radius: none;
+        background-color: transparent;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        z-index: 9;
+        padding: 0; }
+        .mobile-cover .menu .sub-menu li {
+          padding: inherit; }
+
+  .home__hero {
+    height: auto; }
+    .home__hero-women, .home__hero-man {
+      display: none; }
+    .home__hero-logo img {
+      width: 100%; }
+  .home__subjects-title {
+    font-size: 25px;
+    line-height: 1.4;
+    margin-bottom: 40px; }
+  .home__subjects-bg img {
+    width: 100%; }
+  .home__subjects-item__title {
+    position: relative;
+    font-size: 21px;
+    z-index: 2; }
+  .home__subjects-item__description {
+    position: relative;
+    font-size: 14px;
+    z-index: 2; }
+  .home .khimia-top.fizmatik-show {
+    -webkit-transform: translate(-10%, -50%);
+    -ms-transform: translate(-10%, -50%);
+    transform: translate(-10%, -50%); }
+  .home .program-top {
+    top: auto;
+    bottom: 0;
+    right: auto;
+    left: 0;
+    -webkit-transform: translate(0, 10%);
+    -ms-transform: translate(0, 10%);
+    transform: translate(0, 10%); }
+    .home .program-top.fizmatik-show {
+      -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+      transform: translate(0, 0); }
+  .home .program-bottom {
+    -webkit-transform: translate(0%, 20%) rotate(5deg);
+    -ms-transform: translate(0%, 20%) rotate(5deg);
+    transform: translate(0%, 20%) rotate(5deg); }
+    .home .program-bottom.fizmatik-show {
+      -webkit-transform: translate(-10%, 0) rotate(0);
+      -ms-transform: translate(-10%, 0) rotate(0);
+      transform: translate(-10%, 0) rotate(0); }
+  .home .fizik-top {
+    top: auto;
+    bottom: 0;
+    right: auto;
+    left: 0; }
+    .home .fizik-top.fizmatik-show {
+      -webkit-transform: translate(30%, 40%);
+      -ms-transform: translate(30%, 40%);
+      transform: translate(30%, 40%); }
+  .home .fizik-top-two {
+    top: auto;
+    bottom: 0;
+    right: auto;
+    left: 0; }
+
+  .events__page-grid {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+  .events__page-item {
+    margin-bottom: 50px; }
+    .events__page-item:last-of-type {
+      margin-bottom: 0; }
+  .events__page-title {
+    font-size: 25px;
+    margin-bottom: 30px; }
+
+  .contact {
+    padding-bottom: 50px; }
+    .contact__block {
+      margin-bottom: 80px; }
+
+  .footer__content {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+  .footer__right {
+    display: none; }
+  .footer__logo {
+    margin-right: 0; }
+
+  .balls__home-yellowone {
+    left: -90px;
+    z-index: -1; }
+  .balls__contact-red {
+    right: 0; }
+
+  #balls__home-greenone {
+    left: -4%;
+    z-index: -1; }
+  #balls__home-blue {
+    z-index: -1; } }
 
 /*# sourceMappingURL=style.css.map */

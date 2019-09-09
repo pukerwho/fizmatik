@@ -1,4 +1,4 @@
-<div class="events__page-item">
+<div class="events__page-item fizmatik-animate">
 	<a href="<?php the_permalink(); ?>">
 		<div class="events__blocks-item">
 			<div class="events__blocks-img">

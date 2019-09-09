@@ -9,27 +9,38 @@ Template Name: ГЛАВНАЯ страница
 <?php get_template_part('blocks/home/hero') ?>
 <?php get_template_part('blocks/home/subjects') ?>
 <div class="balls">
-	<div class="balls__home-yellowone">
-		<img src="<?php bloginfo('template_url') ?>/img/yellow.png" alt="">
+	<div id="balls__home-yellowone" class="balls__home-yellowone">
+		<img src="<?php bloginfo('template_url') ?>/img/yellow.png" alt="" data-depth="2">
 	</div>
-	<div class="balls__home-greenone"></div>
+	<div id="balls__home-greenone" class="p-absolute">
+		<div class="balls__home-greenone" data-depth-x="1" data-depth-y="5"></div>	
+	</div>
+</div>
+<div class="balls">
+	<div id="balls__home-blue" class="p-absolute">
+		<div class="balls__home-blue" data-depth="1"></div>	
+	</div>
+</div>
+<div class="balls">
+	<div id="balls__home-red" class="p-absolute">
+		<div class="balls__home-red" data-depth="2"></div>	
+	</div>
 </div>
 <!-- EVENTS -->
 <div class="events__page">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<h1 class="events__page-title">И мы умеем не только учиться, <br> но и веселиться</h1>
-				<div class="balls">
-					<div class="balls__home-blue"></div>
+				<div class="pc-show">
+					<div class="events__page-title fizmatik-animate">И мы умеем не только учиться, <br> но и веселиться</div>	
+				</div>
+				<div class="mobile-show">
+					<div class="events__page-title fizmatik-animate">И мы умеем не только учиться, но и веселиться</div>	
 				</div>
 			</div>
 		</div>
 		<div class="row mb-5">
 			<div class="col-md-12">
-				<div class="balls">
-					<div class="balls__home-red"></div>
-				</div>
 				<div class="events__page-grid">
 					<?php 
 						$custom_query_events = new WP_Query( array( 
@@ -52,7 +63,9 @@ Template Name: ГЛАВНАЯ страница
 					</div>
 				</a>
 				<div class="balls">
-					<div class="balls__home-greentwo"></div>
+					<div id="balls__home-greentwo" class="p-absolute">
+						<div class="balls__home-greentwo" data-depth="1"></div>	
+					</div>
 				</div>
 			</div>
 		</div>
@@ -64,8 +77,8 @@ Template Name: ГЛАВНАЯ страница
 		<div class="row">
 			<div class="col-md-12">
 				<div class="balls">
-					<div class="balls__home-yellowtwo">
-						<img src="<?php bloginfo('template_url') ?>/img/yellow.png" alt="">
+					<div id="balls__home-yellowtwo" class="balls__home-yellowtwo">
+						<img src="<?php bloginfo('template_url') ?>/img/yellow.png" alt="" data-depth="2">
 					</div>
 				</div>
 				<div class="contact__title">Контакты</div>
@@ -89,13 +102,13 @@ Template Name: ГЛАВНАЯ страница
 							<img src="<?php bloginfo('template_url') ?>/img/contact-green.svg" alt="">
 						</div>
 					</div>
-					<div class="contact__block-map">
+					<div class="contact__block-map fizmatik-animate">
 						<?php echo carbon_get_post_meta($contact_page, 'crb_contact_kiev_map') ?>
 					</div>
-					<div class="contact__block-title">
+					<div class="contact__block-title fizmatik-animate">
 						Киев
 					</div>
-					<div class="contact__block-address">
+					<div class="contact__block-address fizmatik-animate">
 						<?php echo carbon_get_post_meta($contact_page, 'crb_contact_kiev_address') ?>
 					</div>
 				</div>
@@ -107,13 +120,13 @@ Template Name: ГЛАВНАЯ страница
 							<img src="<?php bloginfo('template_url') ?>/img/contact-red.svg" alt="">
 						</div>
 					</div>
-					<div class="contact__block-map">
+					<div class="contact__block-map fizmatik-animate">
 						<?php echo carbon_get_post_meta($contact_page, 'crb_contact_kvarkov_map') ?>
 					</div>
-					<div class="contact__block-title">
+					<div class="contact__block-title fizmatik-animate">
 						Харьков
 					</div>
-					<div class="contact__block-address">
+					<div class="contact__block-address fizmatik-animate">
 						<?php echo carbon_get_post_meta($contact_page, 'crb_contact_kvarkov_address') ?>
 					</div>
 				</div>
