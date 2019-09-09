@@ -23,13 +23,13 @@ Template Name: КОНТАКТЫ страница
 								<img src="<?php bloginfo('template_url') ?>/img/contact-green.svg" alt="">
 							</div>
 						</div>
-						<div class="contact__block-map">
+						<div class="contact__block-map fizmatik-animate">
 							<?php echo carbon_get_the_post_meta('crb_contact_kiev_map') ?>
 						</div>
-						<div class="contact__block-title">
+						<div class="contact__block-title fizmatik-animate">
 							Киев
 						</div>
-						<div class="contact__block-address">
+						<div class="contact__block-address fizmatik-animate">
 							<?php echo carbon_get_the_post_meta('crb_contact_kiev_address') ?>
 						</div>
 					</div>
@@ -41,13 +41,13 @@ Template Name: КОНТАКТЫ страница
 								<img src="<?php bloginfo('template_url') ?>/img/contact-red.svg" alt="">
 							</div>
 						</div>
-						<div class="contact__block-map">
+						<div class="contact__block-map fizmatik-animate">
 							<?php echo carbon_get_the_post_meta('crb_contact_kvarkov_map') ?>
 						</div>
-						<div class="contact__block-title">
+						<div class="contact__block-title fizmatik-animate">
 							Харьков
 						</div>
-						<div class="contact__block-address">
+						<div class="contact__block-address fizmatik-animate">
 							<?php echo carbon_get_the_post_meta('crb_contact_kvarkov_address') ?>
 						</div>
 					</div>
