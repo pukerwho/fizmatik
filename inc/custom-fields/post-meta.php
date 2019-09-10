@@ -40,8 +40,8 @@ function crb_post_theme_options() {
     Field::make( 'text', 'crb_lessons_time', 'Время' ),
     Field::make( 'select', 'crb_lessons_city', 'Город' )
       ->set_options( array(
-        'Киев' => 'Киев',
-        'Харьков' => 'Харьков',
+        'kyiv' => 'Киев',
+        'kh' => 'Харьков',
       ) ),
   ) );
   Container::make( 'post_meta', 'More' )

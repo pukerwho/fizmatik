@@ -7,6 +7,13 @@
 				<?php 
 					$custom_query_homeworks = new WP_Query( array( 
 						'post_type' => 'lessons',
+						'meta_query' => array(
+							array(
+								'key'     => 'crb_lessons_city',
+					      'value'   => $_SESSION['cityvar'],
+					      'compare' => '=', 
+							)
+						)
 					) );
 					if ($custom_query_homeworks->have_posts()) : while ($custom_query_homeworks->have_posts()) : $custom_query_homeworks->the_post(); ?>
 				<?php get_template_part('blocks/schedule/schedule-bottom') ?>

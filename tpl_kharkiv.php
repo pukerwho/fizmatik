@@ -5,7 +5,11 @@ Template Name: ХАРЬКОВ
 ?>
 
 <?php 
-	$_SESSION['cityvar'] = 'kh'; 
+	if (isset($_GET['city'])){
+		$_SESSION['cityvar'] = $_GET['city']; 
+	} else {
+		$_SESSION['cityvar'] = 'kh';
+	}
 ?>
 
 <?php get_header(); ?>

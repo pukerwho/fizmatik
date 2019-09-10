@@ -23,8 +23,8 @@
 			<span>Город</span>
 			<div class="select-wrapper">
 				<select class="select select-schedule-city">
-					<option value="Харьков" selected>Харьков</option>
-					<option value="Киев">Киев</option>
+					<option value="kh" <?php if ($_SESSION['cityvar'] == 'kh' ) echo 'selected' ; ?> >Харьков</option>
+					<option value="kyiv" <?php if ($_SESSION['cityvar'] == 'kyiv' ) echo 'selected' ; ?>>Киев</option>
 				</select>
 			</div>
 		</div>

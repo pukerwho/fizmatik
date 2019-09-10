@@ -26,7 +26,7 @@
         <div class="col-md-12">
           <div class="header__content">
             <div class="header__left">
-              <a href="<?php echo home_url(); ?>">
+              <a href="<?php echo home_url(); ?>?city=<?php echo $_SESSION['cityvar'] ?>">
                 <div class="header__logo">
                   <img src="<?php bloginfo('template_url') ?>/img/logo.svg" alt="">
                 </div>
@@ -34,23 +34,22 @@
               <div class="header__city">
                 <?php if ($_SESSION['cityvar'] === 'kyiv'): ?>
                 <div class="header__city-main">
-                  <a href="<?php echo get_page_url('tpl_kyiv') ?>">
+                  <a href="<?php echo get_page_url('tpl_kyiv') ?>?city=kyiv">
                     Киев
                   </a>  
                   <div class="header__city-sub">
-                    <a href="<?php echo get_page_url('tpl_kharkiv') ?>">
+                    <a href="<?php echo get_page_url('tpl_kharkiv') ?>?city=kh">
                       Харьков
                     </a>  
                   </div>
                 </div>
-                
                 <?php else: ?>
                   <div class="header__city-main">
-                    <a href="<?php echo get_page_url('tpl_kharkiv') ?>">
+                    <a href="<?php echo get_page_url('tpl_kharkiv') ?>?city=kh">
                       Харьков
                     </a>
                     <div class="header__city-sub">
-                      <a href="<?php echo get_page_url('tpl_kyiv') ?>">
+                      <a href="<?php echo get_page_url('tpl_kyiv') ?>?city=kyiv">
                         Киев
                       </a>
                     </div>

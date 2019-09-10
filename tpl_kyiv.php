@@ -4,8 +4,12 @@ Template Name: КИЕВ
 */
 ?>
 
-<?php 
-	$_SESSION['cityvar'] = 'kyiv'; 
+<?php
+	if (isset($_GET['city'])){
+		$_SESSION['cityvar'] = $_GET['city']; 
+	} else {
+		$_SESSION['cityvar'] = 'kyiv';
+	}
 ?>
 
 <?php get_header(); ?>
