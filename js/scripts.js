@@ -69,7 +69,7 @@ if ($('.page-template-tpl_main').length > 0){
 }
 
 if ($(document).width() > 992) {
-  if ($('.events__page-grid').length > 0) {
+  if ($('.post-type-archive-events .events__page-grid').length > 0) {
     var eventsFourItemHeight = $('.events__page-item:nth-of-type(4n)').height();
     console.log(eventsFourItemHeight);
     $('.events__page-item:nth-of-type(5n) .events__blocks-img').css({'height': 'calc('+ eventsFourItemHeight +'px + 242px)'}); 

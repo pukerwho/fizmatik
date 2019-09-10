@@ -86,10 +86,14 @@
 		$homework_subject_val = $_POST['homework_subject_val'];
 	  $homework_teachers_val = $_POST['homework_teachers_val'];
 	  $homework_class_val = $_POST['homework_class_val'];
-	  echo $homework_teachers_val;
 	  $teachers = carbon_get_post_meta($homework_teachers_val, 'crb_homeworks_teacher');
-	  $teacher_id = get_the_id($teachers['id']);
-	  echo $teacher_id;
+	  foreach ($teachers as $teacher) {
+
+	  	// $teacher_id = get_the_id($teacher['id']);
+	  	foreach ($teacher as $value) {
+	  		echo $value;
+	  	}
+	  }
 	  $filterargs = array(
 	  	'post_type' => 'homeworks', 
 	  	'tax_query' => array(
@@ -109,21 +113,14 @@
 		      'operator' => 'IN'
 				)
 	    ),
-	    'meta_query' => array(
-	    	array(
-	    		'key'     => $teacher_id,
-		      'value'   => 15,
-		      'compare' => 'LIKE', 
-	    	)
-	    )
 	  );
-	  // if ($_POST['homework_teachers_val'] != '') { 
-	  //   $filterargs['meta_query'][] = array(
-	  //     'key'     => $teacher_id,
-	  //     'value'   => 15,
-	  //     'compare' => 'LIKE', 
-	  //   );
-	  // }
+	  if ($_POST['homework_teachers_val'] != '') { 
+	    $filterargs['meta_query'][] = array(
+	      'key'     => 'crb_homeworks_teacher',
+	      'value'   => 'post:teachers:15',
+	      'compare' => 'LIKE',
+	    );
+	  }
 
     query_posts( $args );
 	  $custom_query_homeworks = new WP_Query( $filterargs );

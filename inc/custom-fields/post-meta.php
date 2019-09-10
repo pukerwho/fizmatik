@@ -15,6 +15,11 @@ function crb_post_theme_options() {
       Field::make( 'complex', 'crb_teachers_phones', 'Телефоны' )->add_fields( array(
           Field::make( 'text', 'crb_teachers_phone', 'Номер' ),
       )),
+      Field::make( 'select', 'crb_teachers_city', 'Город' )
+        ->set_options( array(
+          'kyiv' => 'Киев',
+          'kh' => 'Харьков',
+        ) ),
   ) );
   Container::make( 'post_meta', 'More' )
     ->where( 'post_type', '=', 'lessons' )
