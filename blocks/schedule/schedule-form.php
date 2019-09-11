@@ -1,24 +1,27 @@
 <div class="fizmat__form">
+	<?php
+		$body_classes = get_body_class();
+		if (in_array('post-type-archive-lessons',$body_classes)) {
+			$archive_lessons = true;
+		}
+	?>
+	<?php if (!$archive_lessons) {
+		$current_term = get_queried_object_id();
+	} ?>
 	<div class="fizmat__item-big">
 		<span>Направление</span>
 		<div class="select-wrapper">
 	    <select class="select select-schedule-subject">
 	    	<?php $subject_cats = get_terms( array( 'taxonomy' => 'subject', 'parent' => 0, 'hide_empty' => false ) );
 	    	foreach ( $subject_cats as $subject_cat ): ?>
-	    		<option value="<?php echo $subject_cat->term_id ?>"><?php echo $subject_cat->name ?></option>
+	    		<option value="<?php echo $subject_cat->term_id ?>" <?php if ($current_term === $subject_cat->term_id ) echo 'selected' ; ?>><?php echo $subject_cat->name ?></option>
 	    	<?php endforeach; ?>
 	    </select>
 	  </div>
 	</div>
 </div>
 <div class="fizmat__form">
-	<?php
-		$body_classes = get_body_class();
-		if (in_array('post-type-archive-lessons',$body_classes)) {
-			$show_city_filter = true;
-		}
-	?>
-	<?php if($show_city_filter): ?>
+	<?php if($archive_lessons): ?>
 		<div class="fizmat__item">
 			<span>Город</span>
 			<div class="select-wrapper">

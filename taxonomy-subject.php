@@ -51,6 +51,13 @@
 					      'operator' => 'IN'
 					    )
 						),
+						'meta_query' => array(
+							array(
+								'key'     => 'crb_lessons_city',
+					      'value'   => $_SESSION['cityvar'],
+					      'compare' => '=', 
+							)
+						)
 					) );
 					if ($custom_query_lessons->have_posts()) : while ($custom_query_lessons->have_posts()) : $custom_query_lessons->the_post(); ?>
 						<?php get_template_part('blocks/schedule/schedule-bottom') ?>
