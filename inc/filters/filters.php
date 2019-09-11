@@ -117,8 +117,8 @@
 	  if ($_POST['homework_teachers_val'] != '') { 
 	    $filterargs['meta_query'][] = array(
 	      'key'     => 'crb_homeworks_teacher',
-	      'value'   => 'post:teachers:15',
-	      'compare' => 'LIKE',
+	      'value'   => 'post:teachers:'. $homework_teachers_val,
+	      'compare' => 'IN',
 	    );
 	  }
 
@@ -180,6 +180,14 @@
 	      'compare' => '=', 
 	    );
     }
+
+    if ($_POST['schedule_teachers_val'] != '') { 
+	    $filterargs['meta_query'][] = array(
+	      'key'     => 'crb_lessons_teacher',
+	      'value'   => 'post:teachers:'. $schedule_teachers_val,
+	      'compare' => 'IN',
+	    );
+	  }
 
     query_posts( $args );
 	  $custom_query_schedule = new WP_Query( $filterargs );
