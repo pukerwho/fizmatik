@@ -1,4 +1,4 @@
-<div class="fizmat__form">
+<div class="fizmat__form selected-teachers">
 	<div class="fizmat__item">
 		<span>Направление</span>
 		<div class="select-wrapper">

@@ -30,7 +30,8 @@ jQuery(function($){
     });
   })
   //Teachers
-  $(document).on('change', '.select-teachers-subject, .select-teachers-class', function(){
+  $(document).on('click', '.selected-teachers .select-items div', function(){
+  // $(document).on('change', '.select-teachers-subject, .select-teachers-class', function(){
     var class_val = $('.select-teachers-class').val();
     var subject_val = $('.select-teachers-subject').val();
     console.log(class_val);
@@ -60,7 +61,8 @@ jQuery(function($){
   });
 
   // Homeworks
-  $(document).on('change', '.select-homeworks-subject, .select-homeworks-teachers, .select-homeworks-class', function(){
+  $(document).on('click', '.selected-homeworks .select-items div', function(){
+  // $(document).on('change', '.select-homeworks-subject, .select-homeworks-teachers, .select-homeworks-class', function(){
     var homework_subject_val = $('.select-homeworks-subject').val();
     var homework_teachers_val = $('.select-homeworks-teachers').val();
     var homework_class_val = $('.select-homeworks-class').val();
@@ -95,7 +97,8 @@ jQuery(function($){
   });
 
   //schedule
-  $(document).on('change', '.select-schedule-subject, .select-schedule-class, .select-schedule-day, .select-schedule-teachers, .select-schedule-city', function(){
+  $(document).on('click', '.selected-schedule-subject .select-items div', function(){
+  // $(document).on('change', '.select-schedule-subject, .select-schedule-class, .select-schedule-day, .select-schedule-teachers, .select-schedule-city', function(){
     var schedule_class_val = $('.select-schedule-class').val();
     var schedule_subject_val = $('.select-schedule-subject').val();
     var schedule_teachers_val = $('.select-schedule-teachers').val();
@@ -120,8 +123,10 @@ jQuery(function($){
       },
       success : function( data ){
         if( data ) { 
+          console.log('yes');
           $('#schedule_response').html(data);
         } else {
+          console.log('no');
           $('#schedule_response').html('Совпадений не найдено');
         }
       }

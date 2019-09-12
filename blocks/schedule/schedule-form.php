@@ -1,4 +1,4 @@
-<div class="fizmat__form">
+<div class="fizmat__form selected-schedule-subject">
 	<?php
 		$body_classes = get_body_class();
 		if (in_array('post-type-archive-lessons',$body_classes)) {
@@ -20,7 +20,7 @@
 	  </div>
 	</div>
 </div>
-<div class="fizmat__form">
+<div class="fizmat__form selected-schedule-subject">
 	<?php if($archive_lessons): ?>
 		<div class="fizmat__item">
 			<span>Город</span>

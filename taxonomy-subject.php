@@ -44,7 +44,7 @@
 
 	<div class="schedule__bottom">
 		<div class="container">
-			<div class="row">
+			<div id="schedule_response" class="row">
 				<?php 
 					$current_term = get_queried_object_id();
 					$class_cats = get_terms('class', $args );
