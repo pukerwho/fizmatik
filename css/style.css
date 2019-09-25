@@ -9949,7 +9949,7 @@ button.swiper-pagination-bullet {
       display: inline-block;
       color: #2D303C;
       font-family: 'Geometria-Regular';
-      font-size: 18px;
+      font-size: 16px;
       padding-bottom: 20px;
       opacity: 0.6; }
     .header__city-active {
@@ -10010,14 +10010,14 @@ button.swiper-pagination-bullet {
     -ms-flex-align: center;
     align-items: center; }
   .header__menu li {
-    margin-right: 50px; }
+    margin-right: 30px; }
     .header__menu li:last-of-type {
       margin-right: 0; }
   .header__menu a {
     display: inline-block;
     color: #2D303C;
     font-family: 'Geometria-Regular';
-    font-size: 18px;
+    font-size: 16px;
     opacity: 0.6;
     padding-bottom: 20px; }
   .header__menu .menu-item-has-children:hover .sub-menu {
