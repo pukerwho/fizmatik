@@ -40,12 +40,7 @@ Template Name: ХАРЬКОВ
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<div class="pc-show">
-						<div class="events__page-title fizmatik-animate">И мы умеем не только учиться, <br> но и веселиться</div>	
-					</div>
-					<div class="mobile-show">
-						<div class="events__page-title fizmatik-animate">И мы умеем не только учиться, но и веселиться</div>	
-					</div>
+					<div class="events__page-title fizmatik-animate"><?php echo carbon_get_theme_option('crb_common_news_text') ?></div>	
 				</div>
 			</div>
 			<div class="row mb-5">
