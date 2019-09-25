@@ -38,7 +38,8 @@ require_once get_template_directory() . '/inc/filters/filters.php';
 
 
 register_nav_menus( array(
-    'head_menu' => 'Меню в шапке',
+  'head_menu' => 'Меню в шапке',
+  'footer_menu' => 'Меню в подвале'
 ) );
 
 function addAdminEditorStyle() {

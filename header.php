@@ -32,29 +32,31 @@
                 </div>
               </a>
               <div class="header__city">
-                <?php if ($_SESSION['cityvar'] === 'kyiv'): ?>
-                <div class="header__city-main">
-                  <a href="<?php echo get_page_url('tpl_kyiv') ?>?city=kyiv">
-                    Киев
-                  </a>  
-                  <div class="header__city-sub">
-                    <a href="<?php echo get_page_url('tpl_kharkiv') ?>?city=kh">
-                      Харьков
-                    </a>  
-                  </div>
+                <?php 
+                  if ($_SESSION['cityvar'] === 'kyiv') {
+
+                  } 
+                ?>
+                <div class="mr-2">
+                  <a class="<?php 
+                    if ($_SESSION['cityvar'] === 'kh') { 
+                      echo 'header__city-active';
+                    } 
+                  ?>" href="<?php echo get_page_url('tpl_kharkiv') ?>?city=kh">
+                    Харьков
+                  </a>
                 </div>
-                <?php else: ?>
-                  <div class="header__city-main">
-                    <a href="<?php echo get_page_url('tpl_kharkiv') ?>?city=kh">
-                      Харьков
-                    </a>
-                    <div class="header__city-sub">
-                      <a href="<?php echo get_page_url('tpl_kyiv') ?>?city=kyiv">
-                        Киев
-                      </a>
-                    </div>
-                  </div>
-                <?php endif; ?>
+                |
+                <div class="ml-2">
+                  <a class="<?php 
+                    if ($_SESSION['cityvar'] === 'kyiv') {  
+                      echo 'header__city-active';
+                    } 
+                  ?>" href="<?php echo get_page_url('tpl_kyiv') ?>?city=kyiv">
+                    Киев
+                  </a>
+                </div>
+                
               </div>
             </div>
             <div class="header__right">

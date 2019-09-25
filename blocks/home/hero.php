@@ -10,7 +10,7 @@
 				</div>
 				<div class="home__hero-center">
 					<div class="home__hero-logo fizmatik-animate">
-						<img src="<?php bloginfo('template_url') ?>/img/home-hero-logo.svg" alt="">
+						<img src="<?php bloginfo('template_url') ?>/img/logo.svg" alt="">
 					</div>
 					<div class="home__hero-text fizmatik-animate">
 						Центр дополнительного образования для 

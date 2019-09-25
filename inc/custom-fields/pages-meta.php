@@ -13,6 +13,7 @@ Container::make( 'post_meta', 'More' )
         Field::make( 'textarea', 'crb_contact_kiev_address', 'Адрес (Киев)' ),
         Field::make( 'textarea', 'crb_contact_kvarkov_map', 'Карта для Харьков (iframe)' ),
         Field::make( 'textarea', 'crb_contact_kvarkov_address', 'Адрес (Харьков)' ),
+        Field::make( 'text', 'crb_contact_facebook_link', 'Ссылка на facebook' ),
     ) );
 }
 
