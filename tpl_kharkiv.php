@@ -118,7 +118,7 @@ Template Name: ХАРЬКОВ
 								foreach ($contact_kiev as $c_kiev):
 							?>
 								<div class="contact__block-address__item">
-									<div class="mb-3">
+									<div class="mb-1">
 										<?php echo $c_kiev['crb_contact_kiev_address'] ?>	
 									</div>
 									<?php 
@@ -156,7 +156,7 @@ Template Name: ХАРЬКОВ
 								foreach ($contact_kh as $c_kh):
 							?>
 								<div class="contact__block-address__item">
-									<div class="mb-3">
+									<div class="mb-1">
 										<?php echo $c_kh['crb_contact_kvarkov_address'] ?>	
 									</div>
 									<?php 
