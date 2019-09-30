@@ -11098,7 +11098,8 @@ h2 {
         width: 100%;
         height: 680px;
         overflow: hidden;
-        margin-top: -150px; }
+        margin-top: -150px;
+        margin-left: -5px; }
       .contact__block-map .place-card, .contact__block-map .login-control {
         display: none !important; }
     .contact__block-title {
