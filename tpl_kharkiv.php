@@ -113,7 +113,27 @@ Template Name: ХАРЬКОВ
 							Киев
 						</div>
 						<div class="contact__block-address fizmatik-animate">
-							<?php echo carbon_get_post_meta($contact_page, 'crb_contact_kiev_address') ?>
+							<?php 
+								$contact_kiev = carbon_get_post_meta($contact_page, 'crb_contact_kiev_contact');
+								foreach ($contact_kiev as $c_kiev):
+							?>
+								<div class="contact__block-address__item">
+									<div class="mb-3">
+										<?php echo $c_kiev['crb_contact_kiev_address'] ?>	
+									</div>
+									<?php 
+										$kiev_phones = $c_kiev['crb_contact_kiev_phones'];
+										foreach ($kiev_phones as $kiev_phone):
+									?>
+										<div>
+											<a href="tel:<?php echo $kiev_phone['crb_contact_kiev_phone'] ?>">
+												<?php echo $kiev_phone['crb_contact_kiev_phone'] ?>
+											</a>
+										</div>
+									<?php endforeach; ?>
+									<div class="line"></div>
+								</div>
+							<?php endforeach; ?>
 						</div>
 					</div>
 				</div>
@@ -131,7 +151,27 @@ Template Name: ХАРЬКОВ
 							Харьков
 						</div>
 						<div class="contact__block-address fizmatik-animate">
-							<?php echo carbon_get_post_meta($contact_page, 'crb_contact_kvarkov_address') ?>
+							<?php 
+								$contact_kh = carbon_get_post_meta($contact_page, 'crb_contact_kvarkov_contact');
+								foreach ($contact_kh as $c_kh):
+							?>
+								<div class="contact__block-address__item">
+									<div class="mb-3">
+										<?php echo $c_kh['crb_contact_kvarkov_address'] ?>	
+									</div>
+									<?php 
+										$kh_phones = $c_kh['crb_contact_kvarkov_phones'];
+										foreach ($kh_phones as $kh_phone):
+									?>
+										<div>
+											<a href="tel:<?php echo $kh_phone['crb_contact_kvarkov_phone'] ?>">
+												<?php echo $kh_phone['crb_contact_kvarkov_phone'] ?>
+											</a>
+										</div>
+									<?php endforeach; ?>
+									<div class="line"></div>
+								</div>
+							<?php endforeach; ?>
 						</div>
 					</div>
 				</div>
