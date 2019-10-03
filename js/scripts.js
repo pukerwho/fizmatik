@@ -21,7 +21,6 @@ $('.menu-item-has-children > a').on('click', function(e){
 
 //Filter Open List
 function openFilterItemList(num){
-  console.log(num);
   let itemList = document.querySelector('.fizmat__item-list[data-listId=' + num);
   itemList.classList.toggle('fizmat__item-list__open');
 }

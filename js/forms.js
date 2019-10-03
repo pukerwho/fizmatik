@@ -302,11 +302,11 @@ jQuery(function($){
     //Проверяем какой массив
     let checkArray = this.getAttribute('data-array');
     let itemTitle = document.querySelector('.fizmat__item-title[data-array=' + checkArray +']');
-    //Собераем все чекнутые инпуты из листа
-    var checkedBoxes = document.querySelectorAll('.fizmat__item-list[data-array=' + checkArray +'] input[name=fizmat-checkbox]:checked');
+    //Собераем все чекнутые инпуты
+    var checkedBoxes = document.querySelectorAll('.fizmat__item-list input[name=fizmat-checkbox]:checked');    
     for (checkedBox of checkedBoxes) {
       //Определяем в какой массив записать чекнутые значения
-      switch(checkArray) {
+      switch(checkedBox.dataset.array) {
         case 'lessonsSubjectsArray':
         lessonsSubjectsArray.push(checkedBox.value);
         // itemTitle.innerHTML = checkedBox.getAttribute('data-title');
@@ -329,6 +329,11 @@ jQuery(function($){
         break;
       }
     }
+    console.log('lessonsSubjectsArray', lessonsSubjectsArray);
+    console.log('lessonsCityArray', lessonsCityArray);
+    console.log('lessonsClassArray', lessonsClassArray);
+    console.log('lessonsTeacherArray', lessonsTeacherArray);
+    console.log('lessonsDayArray', lessonsDayArray);
     var button = $(this),
     data = {
       'action': 'schedule_action',

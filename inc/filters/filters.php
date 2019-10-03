@@ -226,6 +226,9 @@
 	  	'post_type' => 'lessons', 
 	  	'tax_query' => array(
 				'relation' => 'AND',
+	    ),
+	    'meta_query' => array(
+	    	'relation' => 'AND',
 	    )
 	  );
 
