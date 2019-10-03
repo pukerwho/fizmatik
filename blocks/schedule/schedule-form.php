@@ -12,7 +12,13 @@
 		<span>Направление</span>
 		<div class="select-wrapper">
 			<div class="fizmat__item-title fizmat__item-title-big" data-itemId="lessons-subject" data-array="lessonsSubjectsArray">
-	    	Выберите направление
+	    	<?php 
+		    	if (!$archive_lessons) {
+		    		echo single_term_title();
+		    	} else  {
+		    		echo 'Выберите направление';
+		    	}
+		    ?>
 	    </div>
 	    <div class="fizmat__item-list" data-listId="lessons-subject" data-array="lessonsSubjectsArray">
 	    	<?php $subject_cats = get_terms( array( 'taxonomy' => 'subject', 'parent' => 0, 'hide_empty' => false ) );

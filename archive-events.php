@@ -12,11 +12,11 @@
 			<div class="col-md-12">
 				<div class="events__page-filter">
 					<div>
-						<input type="checkbox" name="eventsfilter[]" value="Мероприятие" id="ads" class="ads-filter">	
+						<input type="checkbox" name="eventsfilter[]" value="Мероприятие" id="ads" class="ads-filter" checked>	
 						<label for="ads">Объявления</label>
 					</div>
 					<div>
-						<input type="checkbox" name="eventsfilter[]" value="Фотоотчет" id="gallery" class="gallery-filter">	
+						<input type="checkbox" name="eventsfilter[]" value="Фотоотчет" id="gallery" class="gallery-filter" checked>	
 						<label for="gallery">Галерея</label>
 					</div>
 				</div>

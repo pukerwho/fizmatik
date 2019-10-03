@@ -31,7 +31,7 @@ jQuery(function($){
   });
 
   //Events filter
-  var eventsArray = [];
+  var eventsArray = ['Мероприятие', 'Фотоотчет'];
   $(document).on('change', '.ads-filter, .gallery-filter', function(){
     var events_this = $(this).val();
     if (eventsArray.length > 0) {
@@ -316,7 +316,8 @@ jQuery(function($){
         // itemTitle.innerHTML = checkedBox.getAttribute('data-title');
         break;
         case 'lessonsTeacherArray':
-        lessonsTeacherArray.push(checkedBox.value);
+        teacherI = 'post:teachers:'+checkedBox.value;
+        lessonsTeacherArray.push(teacherI);
         // itemTitle.innerHTML = checkedBox.getAttribute('data-title');
         break;
         case 'lessonsDayArray':
@@ -329,11 +330,6 @@ jQuery(function($){
         break;
       }
     }
-    console.log('lessonsSubjectsArray', lessonsSubjectsArray);
-    console.log('lessonsCityArray', lessonsCityArray);
-    console.log('lessonsClassArray', lessonsClassArray);
-    console.log('lessonsTeacherArray', lessonsTeacherArray);
-    console.log('lessonsDayArray', lessonsDayArray);
     var button = $(this),
     data = {
       'action': 'schedule_action',

@@ -271,7 +271,7 @@
     if ($_POST['lessonsTeacherArray'] != '') { 
 	    $filterargs['meta_query'][] = array(
 	      'key'     => 'crb_lessons_teacher',
-	      'value'   => 'post:teachers:'. $lessonsTeacherArray,
+	      'value'   => $lessonsTeacherArray,
 	      'compare' => 'IN',
 	    );
 	  }
