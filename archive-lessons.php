@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div class="lessons">
+<div class="lessons mb-5">
 	<?php get_template_part('blocks/schedule/schedule-top') ?>
 	<div class="schedule__bottom">
 		<div class="container">
@@ -16,30 +16,7 @@
 					}
 					$custom_query_lessons = new WP_Query( array( 
 						'post_type' => 'lessons',
-						'meta_query' => array(
-							array(
-								'key'     => 'crb_lessons_city',
-					      'value'   => $_SESSION['cityvar'],
-					      'compare' => '=', 
-							)
-						),
-						'tax_query' => array(
-							'relation' => 'AND',
-							array(
-								'taxonomy' => 'subject',
-					      'terms' => $first_subject_cat,
-					      'field' => 'term_id',
-					      'include_children' => true,
-					      'operator' => 'IN'
-							),
-							array(
-								'taxonomy' => 'class',
-					      'terms' => $first_class_cat,
-					      'field' => 'term_id',
-					      'include_children' => true,
-					      'operator' => 'IN'
-							)
-				    ),
+						
 					) );
 					if ($custom_query_lessons->have_posts()) : while ($custom_query_lessons->have_posts()) : $custom_query_lessons->the_post(); ?>
 				<?php get_template_part('blocks/schedule/schedule-bottom') ?>

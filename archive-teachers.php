@@ -5,7 +5,9 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="balls">
-					<div class="balls__teachers-yellow"></div>
+					<div id="balls__teachers-yellow" class="p-absolute">
+						<img src="<?php bloginfo('template_url') ?>/img/yellow.png" alt="" data-depth="0.7">	
+					</div>
 				</div>
 			</div>
 		</div>
@@ -27,12 +29,18 @@
 					<div class="balls__teachers-green">
 						<img src="<?php bloginfo('template_url') ?>/img/contact-green.svg" alt="">
 					</div>
-					<div class="balls__teachers-redcircle"></div>
+					<div id="balls__teachers-redcircle" class="p-absolute">
+						<div class="balls__teachers-redcircle" data-depth="8"></div>	
+					</div>
 					<div class="balls__teachers-red">
 						<img src="<?php bloginfo('template_url') ?>/img/contact-red.svg" alt="">
 					</div>
-					<div class="balls__teachers-greencircle"></div>
-					<div class="balls__teachers-smallblue"></div>
+					<div id="balls__teachers-greencircle" class="p-absolute">
+						<div class="balls__teachers-greencircle" data-depth="6"></div>	
+					</div>
+					<div id="balls__teachers-smallblue" class="p-absolute">
+						<div class="balls__teachers-smallblue" data-depth="10"></div>	
+					</div>
 				</div>
 			</div>
 		</div>
@@ -49,23 +57,6 @@
 				}
 				$custom_query_teachers = new WP_Query( array( 
 					'post_type' => 'teachers',
-					'tax_query' => array(
-						'relation' => 'AND',
-						array(
-							'taxonomy' => 'subject',
-				      'terms' => $first_subject_cat,
-				      'field' => 'term_id',
-				      'include_children' => true,
-				      'operator' => 'IN'
-						),
-						array(
-							'taxonomy' => 'class',
-				      'terms' => $first_class_cat,
-				      'field' => 'term_id',
-				      'include_children' => true,
-				      'operator' => 'IN'
-						)
-			    ),
 			    'meta_query' => array(
 						array(
 							'key'     => 'crb_teachers_city',
@@ -80,7 +71,9 @@
 		</div>
 	</div>
 	<div class="balls">
-		<div class="balls__teachers-bigblue"></div>	
+		<div id="balls__teachers-bigblue" class="p-absolute">
+			<div class="balls__teachers-bigblue" data-depth="0.3"></div>		
+		</div>
 	</div>
 </div>
 

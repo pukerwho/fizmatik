@@ -25,7 +25,6 @@ if( !isset( $content_width ) ) {
 }
 
 if (!session_id()) {
-  $_SESSION['cityvar'] = 'kh';
   session_start();
 }
 

@@ -5,12 +5,26 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<h1 class="events__page-title fizmatik-animate"><?php echo carbon_get_theme_option('crb_common_news_text') ?></h1>
+				<h1 class="events__page-title fizmatik-animate">Новости</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="events__page-filter">
+					<div>
+						<input type="checkbox" name="eventsfilter[]" value="Мероприятие" id="ads" class="ads-filter">	
+						<label for="ads">Объявления</label>
+					</div>
+					<div>
+						<input type="checkbox" name="eventsfilter[]" value="Фотоотчет" id="gallery" class="gallery-filter">	
+						<label for="gallery">Галерея</label>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="row mb-5">
 			<div class="col-md-12">
-				<div class="events__page-grid">
+				<div id="events_response" class="events__page-grid">
 					<?php 
 						$custom_query_events = new WP_Query( array( 
 							'post_type' => 'events',

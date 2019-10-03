@@ -20,6 +20,9 @@
 </head>
 <body <?php echo body_class(); ?>>
   <!-- <div class="preloader"></div> -->
+  <?php if(!isset($_SESSION['cityvar'])) {
+    $_SESSION['cityvar'] = 'kh';
+  } ?>
   <header id="header" class="header" role="banner">
     <div class="container">
       <div class="row">
@@ -32,11 +35,6 @@
                 </div>
               </a>
               <div class="header__city">
-                <?php 
-                  if ($_SESSION['cityvar'] === 'kyiv') {
-
-                  } 
-                ?>
                 <div class="mr-2">
                   <a class="<?php 
                     if ($_SESSION['cityvar'] === 'kh') { 

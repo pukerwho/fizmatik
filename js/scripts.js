@@ -18,80 +18,49 @@ $('.menu-item-has-children > a').on('click', function(e){
   e.preventDefault();
 });
 
-var x, i, j, selElmnt, a, b, c;
-/* Look for any elements with the class "custom-select": */
-x = document.getElementsByClassName("select-wrapper");
-for (i = 0; i < x.length; i++) {
-  selElmnt = x[i].getElementsByTagName("select")[0];
-  /* For each element, create a new DIV that will act as the selected item: */
-  a = document.createElement("DIV");
-  a.setAttribute("class", "select-selected");
-  a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
-  x[i].appendChild(a);
-  /* For each element, create a new DIV that will contain the option list: */
-  b = document.createElement("DIV");
-  b.setAttribute("class", "select-items select-hide");
-  for (j = 0; j < selElmnt.length; j++) {
-    /* For each option in the original select element,
-    create a new DIV that will act as an option item: */
-    c = document.createElement("DIV");
-    c.innerHTML = selElmnt.options[j].innerHTML;
-    c.addEventListener("click", function(e) {
-        /* When an item is clicked, update the original select box,
-        and the selected item: */
-        var y, i, k, s, h;
-        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
-        h = this.parentNode.previousSibling;
-        for (i = 0; i < s.length; i++) {
-          if (s.options[i].innerHTML == this.innerHTML) {
-            s.selectedIndex = i;
-            h.innerHTML = this.innerHTML;
-            y = this.parentNode.getElementsByClassName("same-as-selected");
-            for (k = 0; k < y.length; k++) {
-              y[k].removeAttribute("class");
-            }
-            this.setAttribute("class", "same-as-selected");
-            break;
-          }
-        }
-        h.click();
-    });
-    b.appendChild(c);
-  }
-  x[i].appendChild(b);
-  a.addEventListener("click", function(e) {
-    /* When the select box is clicked, close any other select boxes,
-    and open/close the current select box: */
-    e.stopPropagation();
-    closeAllSelect(this);
-    this.nextSibling.classList.toggle("select-hide");
-    this.classList.toggle("select-arrow-active");
-  });
+
+//Filter Open List
+function openFilterItemList(num){
+  console.log(num);
+  let itemList = document.querySelector('.fizmat__item-list[data-listId=' + num);
+  itemList.classList.toggle('fizmat__item-list__open');
 }
 
-function closeAllSelect(elmnt) {
-  /* A function that will close all select boxes in the document,
-  except the current select box: */
-  var x, y, i, arrNo = [];
-  x = document.getElementsByClassName("select-items");
-  y = document.getElementsByClassName("select-selected");
-  for (i = 0; i < y.length; i++) {
-    if (elmnt == y[i]) {
-      arrNo.push(i)
-    } else {
-      y[i].classList.remove("select-arrow-active");
-    }
-  }
-  for (i = 0; i < x.length; i++) {
-    if (arrNo.indexOf(i)) {
-      x[i].classList.add("select-hide");
-    }
-  }
+let filterItemTitle = document.querySelectorAll('.fizmat__item-title');
+for (let item of filterItemTitle) {
+  item.addEventListener('click', function(){
+    let num = this.getAttribute('data-itemId');
+    openFilterItemList(num);
+  }) 
 }
 
-/* If the user clicks anywhere outside the select box,
-then close all select boxes: */
-document.addEventListener("click", closeAllSelect);
+//Filter Close List
+// window.addEventListener('click', function(e){
+//   let itemList = document.querySelectorAll('.fizmat__item-list');
+//   let singleItemTitle = document.querySelector('.fizmat__item-title');
+//   for (let inner of itemList) {
+//     console.log(inner);
+//     console.log(e.target);
+//     console.log(singleItemTitle);
+//     if (inner.contains(e.target) || e.target === singleItemTitle ) {
+//       console.log('in')
+//     } else {
+//       console.log('out');
+//     }
+//   }
+// });
+
+//Filter Checkbox Clean
+function uncheckAll() {
+  var inputs = document.querySelectorAll('.fizmat-checkbox');
+  for(var i = 0; i < inputs.length; i++) {
+    inputs[i].checked = false;
+  }
+}
+let cleanButton = document.querySelector('.fizmat__clean');
+if (cleanButton) {
+  cleanButton.addEventListener('click', uncheckAll);  
+}
 
 if ($(document).width() > 640) {
   $('#lightSlider').lightSlider({
@@ -121,11 +90,16 @@ if ($('#teachers_subject_response').length > 0){
   $('.balls__teachers-greencircle').css({'top':'calc('+ teachersHeight +'px - 670px)'});
 }
 
+window.eventsPageGrid = function() {
+  var eventsFourItemHeight = $('.events__page-item:nth-of-type(4n)').height();
+  $('.events__page-item:nth-of-type(5n) .events__blocks-img').css({'height': 'calc('+ eventsFourItemHeight +'px + 242px)'}); 
+}
+
 if ($('.events__page-grid').length > 0){
   var eventsHeight = $('.events__page-grid').height();
   var bodyHeight = $('body').height();
-  $('.balls__events-greentwo').css({'top':'calc('+ eventsHeight +'px + 175px)'});
-  $('.balls__events-bigbluetwo').css({'top': 'calc('+ bodyHeight +'px - 250px)'});
+  $('#balls__events-greentwo').css({'top':'calc('+ eventsHeight +'px + 175px)'});
+  $('#balls__events-bigbluetwo').css({'top': 'calc('+ bodyHeight +'px / 1.3)'});
 }
 
 if ($('.subjects').length > 0){
@@ -145,22 +119,116 @@ if ($('.page-template-tpl_main').length > 0){
 
 if ($(document).width() > 992) {
   if ($('.post-type-archive-events .events__page-grid').length > 0) {
-    var eventsFourItemHeight = $('.events__page-item:nth-of-type(4n)').height();
-    console.log(eventsFourItemHeight);
-    $('.events__page-item:nth-of-type(5n) .events__blocks-img').css({'height': 'calc('+ eventsFourItemHeight +'px + 242px)'}); 
+    eventsPageGrid();
   }
 }
 
 //Parallax
 var balls_home_yellowone = document.querySelector('#balls__home-yellowone');
-var parallaxHomeYellowOne = new Parallax(balls_home_yellowone);
+if (balls_home_yellowone){
+  var parallaxHomeYellowOne = new Parallax(balls_home_yellowone);  
+}
+
 var balls_home_greenone = document.querySelector('#balls__home-greenone');
-var parallaxHomeGreenOne = new Parallax(balls_home_greenone);
+if (balls_home_greenone) {
+  var parallaxHomeGreenOne = new Parallax(balls_home_greenone);  
+}
+
 var balls_home_blue = document.querySelector('#balls__home-blue');
-var parallaxHomeBlue = new Parallax(balls_home_blue);
+if (balls_home_blue) {
+  var parallaxHomeBlue = new Parallax(balls_home_blue);  
+}
+
 var balls_home_red = document.querySelector('#balls__home-red');
-var parallaxHomeRed = new Parallax(balls_home_red);
+if (balls_home_red) {
+  var parallaxHomeRed = new Parallax(balls_home_red);
+}
 var balls_home_greentwo = document.querySelector('#balls__home-greentwo');
-var parallaxHomeGreenTwo = new Parallax(balls_home_greentwo);
+if (balls_home_greentwo) {
+  var parallaxHomeGreenTwo = new Parallax(balls_home_greentwo);  
+}
+
 var balls_home_yellowtwo = document.querySelector('#balls__home-yellowtwo');
-var parallaxHomeYellowTwo = new Parallax(balls_home_yellowtwo);
+if (balls_home_yellowtwo) {
+  var parallaxHomeYellowTwo = new Parallax(balls_home_yellowtwo);  
+}
+
+var balls_one_smallred = document.querySelector('#balls__one-smallred');
+if (balls_one_smallred) {
+  var parallaxBallsOneSmallRed = new Parallax(balls_one_smallred);  
+}
+
+var balls_one_bigyellow = document.querySelector('#balls__one-bigyellow');
+if (balls_one_bigyellow) {
+  var parallaxBallsOneBigYellow = new Parallax(balls_one_bigyellow);  
+}
+
+var balls_one_smallblue = document.querySelector('#balls__one-smallblue');
+if (balls_one_smallblue) {
+  var parallaxBallsOneSmallBlue = new Parallax(balls_one_smallblue);  
+}
+
+var balls_one_bigblue = document.querySelector('#balls__one-bigblue');
+if (balls_one_bigblue) {
+  var parallaxBallsOneBigBlue = new Parallax(balls_one_bigblue);  
+}
+
+var balls_teachers_yellow = document.querySelector('#balls__teachers-yellow');
+if (balls_teachers_yellow) {
+  var parallaxBallsTeachersYellow = new Parallax(balls_teachers_yellow);  
+}
+
+var balls_teachers_greencircle = document.querySelector('#balls__teachers-greencircle');
+if (balls_teachers_greencircle) {
+  var parallaxBallsTeachersGreenCircle = new Parallax(balls_teachers_greencircle);  
+}
+
+var balls_teachers_smallblue = document.querySelector('#balls__teachers-smallblue');
+if (balls_teachers_smallblue) {
+  var parallaxBallsTeachersSmallBlue = new Parallax(balls_teachers_smallblue);  
+}
+
+var balls_teachers_bigblue = document.querySelector('#balls__teachers-bigblue');
+if (balls_teachers_bigblue) {
+  var parallaxBallsTeachersBigBlue = new Parallax(balls_teachers_bigblue);  
+}
+
+var balls_teachers_redcircle = document.querySelector('#balls__teachers-redcircle');
+if (balls_teachers_redcircle) {
+  var parallaxBallsTeachersRedCirlce = new Parallax(balls_teachers_redcircle);  
+}
+
+var balls_events_yellow = document.querySelector('#balls__events-yellow');
+if (balls_events_yellow) {
+  var parallaxBallsEventsYellow = new Parallax(balls_events_yellow);  
+}
+
+var balls_events_red = document.querySelector('#balls__events-red');
+if (balls_events_red) {
+  var parallaxBallsEventsRed = new Parallax(balls_events_red);  
+}
+
+var balls_events_bigblueone = document.querySelector('#balls__events-bigblueone');
+if (balls_events_bigblueone) {
+  var parallaxBallsEventsBigBlueOne = new Parallax(balls_events_bigblueone);  
+}
+
+var balls_events_greenone = document.querySelector('#balls__events-greenone');
+if (balls_events_greenone) {
+  var parallaxBallsEventsGreenOne = new Parallax(balls_events_greenone);  
+}
+
+var balls_events_greentwo = document.querySelector('#balls__events-greentwo');
+if (balls_events_greentwo) {
+  var parallaxBallsEventsGreenTwo = new Parallax(balls_events_greentwo);  
+}
+
+var balls_events_bigbluetwo = document.querySelector('#balls__events-bigbluetwo');
+if (balls_events_bigbluetwo) {
+  var parallaxBallsEventsBigBlueTwo = new Parallax(balls_events_bigbluetwo);  
+}
+
+var balls_contact_yellow = document.querySelector('#balls__contact-yellow');
+if (balls_contact_yellow) {
+  var parallaxBallsEventsBigBlueTwo = new Parallax(balls_contact_yellow);  
+}
