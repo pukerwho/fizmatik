@@ -33,6 +33,17 @@ for (let item of filterItemTitle) {
   }) 
 }
 
+//скрыть все фильтры
+$(document).click(function(e) {  
+  itemData = e.target.dataset.itemid;
+  if ('fizmat__item-title' === e.target.classList.value) {
+    e.stopPropagation();
+  } else {
+    
+    find_lists = $(this).find('.fizmat__item-list');
+    find_lists.removeClass('fizmat__item-list__open'); 
+  }
+})
 //Filter Close List
 // window.addEventListener('click', function(e){
 //   let itemList = document.querySelectorAll('.fizmat__item-list');
