@@ -11458,6 +11458,17 @@ h2 {
   left: -50px;
   top: 25px; }
 
+#balls__subjects-bluetwo {
+  right: 0; }
+
+#balls__subjects-red {
+  right: 131px; }
+
+#balls__subjects-yellow {
+  left: 0; }
+
+.balls > div {
+  z-index: -1; }
 .balls__home-yellowone {
   position: absolute;
   left: -30px; }
@@ -11704,14 +11715,6 @@ h2 {
   position: absolute;
   right: 131px;
   background-color: #ff7947;
-  -webkit-border-radius: 50%;
-  border-radius: 50%; }
-.balls__subjects-yellow {
-  width: 131px;
-  height: 131px;
-  position: absolute;
-  left: 0;
-  background-color: #fddd5d;
   -webkit-border-radius: 50%;
   border-radius: 50%; }
 
@@ -11961,7 +11964,10 @@ h2 {
     top: -webkit-calc(50% + 15px);
     top: calc(50% + 15px); }
   .hero__subject .math__subject-title {
-    font-size: 36px; }
+    font-size: 36px;
+    margin-left: -50px; }
+  .hero__subject .math__subject-img {
+    margin-left: 0; }
   .hero__subject .math__img-inner {
     width: -webkit-calc(100% - 100px);
     width: calc(100% - 100px);

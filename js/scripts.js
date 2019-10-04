@@ -102,10 +102,10 @@ if ($('.events__page-grid').length > 0){
 }
 
 if ($('.subjects').length > 0){
-  var teachersHeight = $('.subjects').height();
-  $('.balls__subjects-bluetwo').css({'top':'calc('+ teachersHeight +'px / 1.13)'});
-  $('.balls__subjects-red').css({'top':'calc('+ teachersHeight +'px / 1.07)'});
-  $('.balls__subjects-yellow').css({'top':'calc('+ teachersHeight +'px / 1.3)'});
+  var subjectsHeight = $('.subjects').height();
+  $('#balls__subjects-bluetwo').css({'top':'calc('+ subjectsHeight +'px / 1.13)'});
+  $('#balls__subjects-red').css({'top':'calc('+ subjectsHeight +'px / 1.07)'});
+  $('#balls__subjects-yellow').css({'top':'calc('+ subjectsHeight +'px / 1.3)'});
 }
 
 if ($('.page-template-tpl_main').length > 0){
@@ -230,6 +230,26 @@ if (balls_events_bigbluetwo) {
 var balls_contact_yellow = document.querySelector('#balls__contact-yellow');
 if (balls_contact_yellow) {
   var parallaxBallsEventsBigBlueTwo = new Parallax(balls_contact_yellow);  
+}
+
+var balls_subjects_blueone = document.querySelector('#balls__subjects-blueone');
+if (balls_subjects_blueone) {
+  var parallaxBallsSubjectsBlueOne = new Parallax(balls_subjects_blueone);  
+}
+
+var balls_subjects_bluetwo = document.querySelector('#balls__subjects-bluetwo');
+if (balls_subjects_bluetwo) {
+  var parallaxBallsSubjectsBlueTwo = new Parallax(balls_subjects_bluetwo);  
+}
+
+var balls_subjects_red = document.querySelector('#balls__subjects-red');
+if (balls_subjects_red) {
+  var parallaxBallsSubjectsRed = new Parallax(balls_subjects_red);  
+}
+
+var balls_subjects_yellow = document.querySelector('#balls__subjects-yellow');
+if (balls_subjects_yellow) {
+  var parallaxBallsSubjectsYellow = new Parallax(balls_subjects_yellow);  
 }
 
 var hero_subject_img_inner = document.querySelector('#hero__subject-img__inner');
