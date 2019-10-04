@@ -36,10 +36,15 @@ for (let item of filterItemTitle) {
 //скрыть все фильтры
 $(document).click(function(e) {  
   itemData = e.target.dataset.itemid;
+  eValue = e.target.classList.value;
+  eTarget = $(e.target.tagName);
+  checkboxClick = eValue.indexOf('fizmat-checkbox');
   if ('fizmat__item-title' === e.target.classList.value) {
+    eValue = e.target.classList.value;
+    e.stopPropagation();
+  } else if (checkboxClick != -1 || eTarget.is('label')) {
     e.stopPropagation();
   } else {
-    
     find_lists = $(this).find('.fizmat__item-list');
     find_lists.removeClass('fizmat__item-list__open'); 
   }
