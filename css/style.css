@@ -11948,6 +11948,31 @@ h2 {
     right: auto;
     left: 0; }
 
+  .hero__subject-title {
+    font-size: 50px; }
+  .hero__subject .chemistry__subject-img {
+    margin-left: 0; }
+  .hero__subject .program__subject-title {
+    top: 50%;
+    font-size: 36px; }
+  .hero__subject .program__subject-img {
+    margin-left: 0; }
+  .hero__subject .program__img-inner {
+    top: -webkit-calc(50% + 15px);
+    top: calc(50% + 15px); }
+  .hero__subject .math__subject-title {
+    font-size: 36px; }
+  .hero__subject .math__img-inner {
+    width: -webkit-calc(100% - 100px);
+    width: calc(100% - 100px);
+    top: 20px; }
+  .hero__subject .physics__subject-title {
+    font-size: 50px; }
+  .hero__subject .physics__subject-img {
+    margin-left: 0; }
+  .hero__subject .physics__img-inner {
+    top: 20px; }
+
   .teachers {
     padding-bottom: 50px; }
     .teachers__block {
