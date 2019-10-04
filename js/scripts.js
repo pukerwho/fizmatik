@@ -231,3 +231,8 @@ var balls_contact_yellow = document.querySelector('#balls__contact-yellow');
 if (balls_contact_yellow) {
   var parallaxBallsEventsBigBlueTwo = new Parallax(balls_contact_yellow);  
 }
+
+var hero_subject_img_inner = document.querySelector('#hero__subject-img__inner');
+if (hero_subject_img_inner) {
+  var parallaxHeroSubjectImgInner = new Parallax(hero_subject_img_inner);  
+}
