@@ -11865,6 +11865,8 @@ h2 {
       flex-direction: column; }
       .mobile-cover .menu li {
         margin-right: 0; }
+        .mobile-cover .menu li:after {
+          display: none; }
       .mobile-cover .menu .menu-item-has-children {
         position: relative;
         padding-right: 0; }
