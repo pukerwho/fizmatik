@@ -60,13 +60,13 @@ jQuery(function($){
       },
       success : function( data ){
         if( data ) { 
+          $('#events_response').addClass('events_filter_response');
           $('#events_response').html(data);
           let animateClass = document.querySelectorAll('#events_response .fizmatik-animate');
           for (let aClass of animateClass) {
             aClass.classList.remove('fizmatik-animate');
             aClass.style.opacity = 1;
           };
-          eventsPageGrid();
         } else {
           $('#events_response').html('Совпадений не найдено');
         }
@@ -292,6 +292,10 @@ jQuery(function($){
 
   //Lessons filter
   $(document).on('change', '.fizmat-lessons-checkbox', function(){
+    //Меняем для направления заголовок (если страница Направления)
+    var lessonsSubjectsItemTitleBig = document.querySelector('.tax-subject .fizmat__item-title-big');
+    lessonsSubjectsItemTitleBig.innerHTML = 'Выберите направления';
+
     var lessonsSubjectsArray = [];
     var lessonsCityArray = [];
     var lessonsClassArray = [];

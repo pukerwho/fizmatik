@@ -38,9 +38,12 @@ $(document).click(function(e) {
   itemData = e.target.dataset.itemid;
   eValue = e.target.classList.value;
   eTarget = $(e.target.tagName);
+  console.log(e.target.classList.value);
   checkboxClick = eValue.indexOf('fizmat-checkbox');
-  if ('fizmat__item-title' === e.target.classList.value) {
+  titleClick = eValue.indexOf('fizmat__item-title');
+  if (titleClick != -1) {
     eValue = e.target.classList.value;
+    console.log('yes1')
     e.stopPropagation();
   } else if (checkboxClick != -1 || eTarget.is('label')) {
     e.stopPropagation();

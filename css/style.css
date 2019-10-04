@@ -10903,6 +10903,11 @@ h2 {
     grid-gap: 32px;
     -ms-grid-columns: 1fr [3];
     grid-template-columns: repeat(3, 1fr); }
+  .events__page .events_filter_response .events__page-item:nth-of-type(5n) {
+    -ms-grid-column-span: 1;
+    grid-column: span 1;
+    -ms-grid-row-span: 1;
+    grid-row: span 1; }
   .events__page-item {
     -ms-grid-column-span: 1;
     grid-column: span 1;
