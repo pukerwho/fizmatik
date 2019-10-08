@@ -10953,23 +10953,36 @@ h2 {
       -ms-grid-column-span: 1;
       grid-column: span 1; }
   .events__page-more {
+    min-width: 240px;
     display: -webkit-inline-box;
     display: -webkit-inline-flex;
     display: -ms-inline-flexbox;
     display: inline-flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     color: #ffffff;
     font-family: 'Geometria-Medium';
     font-size: 16px;
     letter-spacing: 0.4px;
+    line-height: 1;
     text-align: center;
     -webkit-border-radius: 22.5px;
     border-radius: 22.5px;
     background-color: #00bb87;
     cursor: pointer;
-    padding: 15px 30px; }
+    padding: 15px 0px; }
 .events__more {
   min-width: 240px;
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   color: #ffffff;
   font-family: 'Geometria-Medium';
   font-size: 16px;
@@ -11019,6 +11032,7 @@ h2 {
     font-family: 'Geometria-Medium';
     font-size: 16px;
     letter-spacing: 0.4px;
+    line-height: 1;
     text-align: center;
     -webkit-border-radius: 22.5px;
     border-radius: 22.5px;
@@ -11349,6 +11363,7 @@ h2 {
   display: none; }
 .fizmat__item label, .fizmat__item-big label {
   position: relative;
+  font-family: 'AvenirNext-Medium';
   cursor: pointer; }
 .fizmat__item label:before, .fizmat__item-big label:before {
   content: '';

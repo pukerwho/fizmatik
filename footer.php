@@ -39,7 +39,7 @@
 	                <div class="footer__menu-email">
 	                	<li class="mr-0">Возникли вопросы?</li>
 	                	<?php foreach ( $contact_pages as $contact_page ): ?>
-		                	<a href="mailto:<?php echo carbon_get_post_meta($contact_page, 'crb_contact_email') ?>">
+		                	<a href="mailto:<?php echo carbon_get_post_meta($contact_page, 'crb_contact_email') ?>" target="_blank">
 		                		<?php echo carbon_get_post_meta($contact_page, 'crb_contact_email') ?>
 		                	</a>
 	                	<?php endforeach; ?>
