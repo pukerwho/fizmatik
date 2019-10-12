@@ -14,6 +14,7 @@
 		  'homeworksClassArray' => $custom_query_homeworks->homeworksClassArray,
 
 		  'eventsArray' => $custom_query_events->eventsArray,
+		  'eventCheckedArray' => $custom_query_events->eventCheckedArray,
 
 		  'lessonsSubjectsArray' => $custom_query_schedule->lessonsSubjectsArray,
 		  'lessonsCityArray' => $custom_query_schedule->lessonsCityArray,
@@ -26,15 +27,24 @@
 		wp_enqueue_script( 'forms' );
 	}
 
-	//events filter
+	//events more filter
 	function events_filter_function(){
 		$args = json_decode( stripslashes( $_POST['query'] ), true );
 		$page = $_POST['page'] + 1;
+		$eventCheckedArray = $_POST['eventCheckedArray'];
 	  $filterargs = array(
 	  	'post_type' => 'events', 
 	  	'paged' => $page, 
 	  	'posts_per_page' => 6,
+	  	'orderby' => 'menu_order'
 	  );
+	  if ($_POST['eventCheckedArray'] != '') { 
+	    $filterargs['meta_query'][] = array(
+	      'key'     => 'crb_events_subtitle',
+	      'value'   => $eventCheckedArray,
+	      'compare' => 'IN', 
+	    );
+	  }
 
     query_posts( $args );
 	  $custom_query_events = new WP_Query( $filterargs );
@@ -47,6 +57,35 @@
 
 	add_action('wp_ajax_events_more', 'events_filter_function');
 	add_action('wp_ajax_nopriv_events_more', 'events_filter_function');
+
+	//events filter
+	function events_page_filter_function(){
+		$args = json_decode( stripslashes( $_POST['query'] ), true );
+	  $eventsArray = $_POST['eventsArray'];
+	  $filterargs = array(
+	  	'post_type' => 'events', 
+	  	'orderby' => 'menu_order'
+	  );
+
+	  if ($_POST['eventsArray'] != '') { 
+	    $filterargs['meta_query'][] = array(
+	      'key'     => 'crb_events_subtitle',
+	      'value'   => $eventsArray,
+	      'compare' => 'IN', 
+	    );
+	  }
+
+    query_posts( $args );
+	  $custom_query_events = new WP_Query( $filterargs );
+	  if ($custom_query_events->have_posts()) : while ($custom_query_events->have_posts()) : $custom_query_events->the_post();
+	    get_template_part('blocks/events/events-page');
+	  endwhile; 
+	  endif;
+	  die;
+	}
+
+	add_action('wp_ajax_events_page_filter', 'events_page_filter_function');
+	add_action('wp_ajax_nopriv_events_page_filter', 'events_page_filter_function');
 
 	//teachers clean 
 	function teachers_clean(){
@@ -287,33 +326,5 @@
 
 	add_action('wp_ajax_schedule_action', 'schedule_filter_function');
 	add_action('wp_ajax_nopriv_schedule_action', 'schedule_filter_function');
-
-	//events filter
-	function events_page_filter_function(){
-		$args = json_decode( stripslashes( $_POST['query'] ), true );
-	  $eventsArray = $_POST['eventsArray'];
-	  $filterargs = array(
-	  	'post_type' => 'events', 
-	  );
-
-	  if ($_POST['eventsArray'] != '') { 
-	    $filterargs['meta_query'][] = array(
-	      'key'     => 'crb_events_subtitle',
-	      'value'   => $eventsArray,
-	      'compare' => 'IN', 
-	    );
-	  }
-
-    query_posts( $args );
-	  $custom_query_events = new WP_Query( $filterargs );
-	  if ($custom_query_events->have_posts()) : while ($custom_query_events->have_posts()) : $custom_query_events->the_post();
-	    get_template_part('blocks/events/events-page');
-	  endwhile; 
-	  endif;
-	  die;
-	}
-
-	add_action('wp_ajax_events_page_filter', 'events_page_filter_function');
-	add_action('wp_ajax_nopriv_events_page_filter', 'events_page_filter_function');
 
 ?>

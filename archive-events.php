@@ -12,11 +12,11 @@
 			<div class="col-md-12">
 				<div class="events__page-filter">
 					<div>
-						<input type="checkbox" name="eventsfilter[]" value="Мероприятие" id="ads" class="ads-filter" checked>	
+						<input type="checkbox" name="fizmat-checkbox" value="Мероприятие" id="ads" class="ads-filter" checked>	
 						<label for="ads">Объявления</label>
 					</div>
 					<div>
-						<input type="checkbox" name="eventsfilter[]" value="Фотоотчет" id="gallery" class="gallery-filter" checked>	
+						<input type="checkbox" name="fizmat-checkbox" value="Фотоотчет" id="gallery" class="gallery-filter" checked>	
 						<label for="gallery">Галерея</label>
 					</div>
 				</div>
@@ -28,7 +28,8 @@
 					<?php 
 						$custom_query_events = new WP_Query( array( 
 							'post_type' => 'events',
-							'posts_per_page' => 6
+							'posts_per_page' => 6,
+							'orderby' => 'menu_order'
 						) );
 						if ($custom_query_events->have_posts()) : while ($custom_query_events->have_posts()) : $custom_query_events->the_post(); ?>
 						<?php get_template_part('blocks/events/events-page') ?>

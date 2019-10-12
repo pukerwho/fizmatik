@@ -1,11 +1,18 @@
 jQuery(function($){
   //More Events
   $(document).on('click', '.events__page-more', function(){
+    var eventCheckedArray = [];
+    var eventCheckedBoxes = document.querySelectorAll('.events__page-filter input[name=fizmat-checkbox]:checked');
+    for (eventCheckedBox of eventCheckedBoxes) {
+      eventCheckedArray.push(eventCheckedBox.value);
+    }
+    console.log(eventCheckedArray);
     var button = $(this),
       data = {
         'action': 'events_more',
         'query': filter_params.posts,
         'page' : filter_params.current_page,
+        'eventCheckedArray': eventCheckedArray
       };
 
     $.ajax({
@@ -17,13 +24,20 @@ jQuery(function($){
       },
       success : function( data ){
         if( data ) { 
+          console.log('yes', data);
           button.text('Еще мероприятия');
           $('.events__page-grid .events__page-item:last-of-type').after(data);
           if (filter_params.current_page == filter_params.max_page) {
             button.remove();
           }
+          let animateClass = document.querySelectorAll('#events_response .fizmatik-animate');
+          for (let aClass of animateClass) {
+            aClass.classList.remove('fizmatik-animate');
+            aClass.style.opacity = 1;
+          };
           filter_params.current_page++;
         } else {
+          console.log('no');
           button.remove();
         }
       }
