@@ -29,7 +29,8 @@
 						$custom_query_events = new WP_Query( array( 
 							'post_type' => 'events',
 							'posts_per_page' => 6,
-							'orderby' => 'menu_order'
+							'orderby' => 'menu_order',
+							'order' => 'ASC'
 						) );
 						if ($custom_query_events->have_posts()) : while ($custom_query_events->have_posts()) : $custom_query_events->the_post(); ?>
 						<?php get_template_part('blocks/events/events-page') ?>

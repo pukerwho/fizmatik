@@ -36,7 +36,8 @@
 	  	'post_type' => 'events', 
 	  	'paged' => $page, 
 	  	'posts_per_page' => 6,
-	  	'orderby' => 'menu_order'
+	  	'orderby' => 'menu_order',
+	  	'order' => 'ASC'
 	  );
 	  if ($_POST['eventCheckedArray'] != '') { 
 	    $filterargs['meta_query'][] = array(
@@ -64,7 +65,8 @@
 	  $eventsArray = $_POST['eventsArray'];
 	  $filterargs = array(
 	  	'post_type' => 'events', 
-	  	'orderby' => 'menu_order'
+	  	'orderby' => 'menu_order',
+	  	'order' => 'ASC'
 	  );
 
 	  if ($_POST['eventsArray'] != '') { 
