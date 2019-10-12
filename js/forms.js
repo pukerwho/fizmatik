@@ -203,10 +203,10 @@ jQuery(function($){
   // Homeworks filter
   // $(document).on('click', '.selected-homeworks .select-items div', function(){
   var homeworksSubjectsArray = [];
-  var homeworksTeachersArrayBase = [];
-  var homeworksTeachersArray = [];
   var homeworksClassArray = [];
   $(document).on('change', '.fizmat-homeworks-checkbox', function(){
+    var homeworksTeachersArrayBase = [];
+    var homeworksTeachersArray = [];
     //Ловим клик
     var homeworks_this = $(this).val();
     //Проверяем в какой массив добавлять
@@ -223,23 +223,12 @@ jQuery(function($){
         homeworksSubjectsArray.push(homeworks_this);
       }  
     }
-    if (checkArray === 'homeworksTeachersArray') {
-      if (homeworksTeachersArrayBase.length > 0) {
-        var index = homeworksTeachersArrayBase.indexOf(homeworks_this);
-        if (index > -1) {
-          homeworksTeachersArrayBase.splice(index, 1);
-        } else {
-          homeworksTeachersArrayBase.push(homeworks_this);
-        }
-      } else {
-        homeworksTeachersArrayBase.push(homeworks_this);
-      }  
-    }
+    var homeworksTeachersArrayBase = document.querySelectorAll('.fizmat__item-list input[data-array=homeworksTeachersArray]:checked');
     for (iHomeworksTeachersArray of homeworksTeachersArrayBase) {
-      iHomeworksTeachersArray = 'post:teachers:'+iHomeworksTeachersArray;
-      homeworksTeachersArray.push(iHomeworksTeachersArray); 
-      //Нужно удалить повторяющиеся
+      iHomeworksTeachersArray = 'post:teachers:'+iHomeworksTeachersArray.value;
+      homeworksTeachersArray.push(iHomeworksTeachersArray);
     }
+    console.log(homeworksTeachersArray);
     if (checkArray === 'homeworksClassArray') {
       if (homeworksClassArray.length > 0) {
         var index = homeworksClassArray.indexOf(homeworks_this);
@@ -308,8 +297,10 @@ jQuery(function($){
   $(document).on('change', '.fizmat-lessons-checkbox', function(){
     //Меняем для направления заголовок (если страница Направления)
     var lessonsSubjectsItemTitleBig = document.querySelector('.tax-subject .fizmat__item-title-big');
-    lessonsSubjectsItemTitleBig.innerHTML = 'Выберите направления';
-
+    if (lessonsSubjectsItemTitleBig) {
+      lessonsSubjectsItemTitleBig.innerHTML = 'Выберите направления';  
+    };
+    
     var lessonsSubjectsArray = [];
     var lessonsCityArray = [];
     var lessonsClassArray = [];
